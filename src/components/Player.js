@@ -20,7 +20,7 @@ function Player(props) {
 	const SkipSong = (forwards = true) => {
 		if (forwards) {
 			props.setCurrentSongIndex(() => {
-				let temp = props.setCurrentSongIndex;
+				let temp = props.currentSongIndex;
 				temp++;
 
 				if (temp > props.songs.length - 1) {
@@ -31,7 +31,7 @@ function Player(props) {
 			});
 		} else {
 			props.setCurrentSongIndex(() => {
-				let temp = props.setCurrentSongIndex;
+				let temp = props.currentSongIndex;
 				temp--;
 
 				if (temp < 0) {
@@ -45,17 +45,10 @@ function Player(props) {
 
 	return (
 		<div>
-			<audio src={props.songs[props.currentSongIndex].src} ref={audioElement}></audio>
-			<h4>Playing Now</h4>
+			<audio src={props.songs[props.currentSongIndex].src} ref={audioElement} />
 			<PlayerDetails song={props.songs[props.currentSongIndex]} />
 			<PlayerControls isPlaying={isPlaying} setIsPlaying={setIsPlaying} SkipSong={SkipSong} />
-
-			<p>
-				<strong>Next up:</strong> {props.songs[props.nextSongIndex].title} by
-				{props.songs[props.nextSongIndex].producer}
-			</p>
 		</div>
 	);
 }
-
 export default Player;

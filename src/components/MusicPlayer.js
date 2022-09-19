@@ -3,10 +3,9 @@ import {useEffect} from 'react';
 
 import Player from './Player';
 
-export default function MusicPlayer() {
+function MusicPlayer() {
 	const [songs] = useState([
 		{
-			id: 1,
 			title: 'Beat 1',
 			producer: 'Unknown',
 			src: './beats/beat1.mp3',
@@ -82,3 +81,5 @@ export default function MusicPlayer() {
 		</div>
 	);
 }
+
+export default MusicPlayer;
