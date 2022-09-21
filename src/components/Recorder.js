@@ -40,15 +40,9 @@ export default function Recorder() {
 
 	return (
 		<div>
-			{!isRecording ? (
-				<button disabled={isRecording} onClick={startRecording}>
-					<FaMicrophone />
-				</button>
-			) : (
-				<button disabled={!isRecording} onClick={stopRecording}>
-					<FaMicrophoneAltSlash />
-				</button>
-			)}
+			<button onClick={isRecording ? stopRecording : startRecording}>
+				{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
+			</button>
 			<audio ref={audioPlayer} src={blobUrl} controls="controls"></audio>
 		</div>
 	);
