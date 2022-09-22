@@ -1,15 +1,19 @@
 import MicRecorder from 'mic-recorder-to-mp3';
+import {nanoid} from 'nanoid';
 import {useEffect, useState, useRef} from 'react';
 import {FaMicrophone} from 'react-icons/fa';
 import {FaMicrophoneAltSlash} from 'react-icons/fa';
 
 export default function Recorder() {
 	const recorder = useRef(null);
-	const audioPlayer = useRef(null);
 
-	const [blobUrl, setBlobUrl] = useState(null);
-	const [audioFile, setAudioFile] = useState(null);
 	const [isRecording, setIsRecording] = useState(null);
+
+	const handleAddRecording = (blobUrl, audiofile) => {
+		setAddRecordings([...addRecordings, {id: nanoid(), url: blobUrl, src: audiofile}]);
+	};
+
+	const [addRecordings, setAddRecordings] = useState([]);
 
 	useEffect(() => {
 		recorder.current = new MicRecorder({bitRate: 128});
@@ -30,20 +34,26 @@ export default function Recorder() {
 					type: blob.type,
 					lastModified: Date.now(),
 				});
-				const newBlobUrl = URL.createObjectURL(blob);
-				setBlobUrl(newBlobUrl);
+				const newBlobUrl = URL.createObjectURL(file);
 				setIsRecording(false);
-				setAudioFile(file);
+				handleAddRecording(newBlobUrl, file);
 			});
-		console.log(audioFile);
 	};
 
 	return (
 		<div>
-			<button onClick={isRecording ? stopRecording : startRecording}>
-				{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
-			</button>
-			<audio ref={audioPlayer} src={blobUrl} controls="controls"></audio>
+			<div>
+				<button onClick={isRecording ? stopRecording : startRecording}>
+					{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
+				</button>
+			</div>
+
+			<h4>MY RECORDED TRACKS:</h4>
+			{addRecordings.map(addRecording => (
+				<div key={addRecording.id} className="audio-container">
+					<audio src={addRecording.url} controls="controls"></audio>
+				</div>
+			))}
 		</div>
 	);
 }
