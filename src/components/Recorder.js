@@ -6,21 +6,15 @@ import {FaMicrophoneAltSlash} from 'react-icons/fa';
 
 export default function Recorder() {
 	const recorder = useRef(null);
-	const audioPlayer = useRef(null);
 
-	const [blobUrl, setBlobUrl] = useState(null);
-	const [audioFile, setAudioFile] = useState(null);
 	const [isRecording, setIsRecording] = useState(null);
 
-	const handleAddRecording = event => {
-		if (event.key === 'Enter') {
-			setAddRecordings([...addRecordings, {id: nanoid(), url: blobUrl, src: audioPlayer}]);
-		}
+	const handleAddRecording = (blobUrl, audiofile) => {
+		setAddRecordings([...addRecordings, {id: nanoid(), url: blobUrl, src: audiofile}]);
 	};
 
-	const [addRecordings, setAddRecordings] = useState([
-		{id: nanoid(), url: blobUrl, src: audioPlayer},
-	]);
+	const [addRecordings, setAddRecordings] = useState([{id: nanoid(), url: '', src: ''}]);
+	console.log(addRecordings);
 
 	useEffect(() => {
 		recorder.current = new MicRecorder({bitRate: 128});
@@ -41,21 +35,16 @@ export default function Recorder() {
 					type: blob.type,
 					lastModified: Date.now(),
 				});
-				const newBlobUrl = URL.createObjectURL(blob);
-				setBlobUrl(newBlobUrl);
+				const newBlobUrl = URL.createObjectURL(file);
 				setIsRecording(false);
-				setAudioFile(file);
+				handleAddRecording(newBlobUrl, file);
 			});
-		console.log(audioFile);
 	};
 
 	return (
 		<div>
 			<div>
-				<button
-					onKeyDown={handleAddRecording}
-					onClick={isRecording ? stopRecording : startRecording}
-				>
+				<button onClick={isRecording ? stopRecording : startRecording}>
 					{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
 				</button>
 			</div>
@@ -63,13 +52,7 @@ export default function Recorder() {
 			<h4>MY RECORDED TRACKS:</h4>
 			{addRecordings.map(addRecording => (
 				<div key={addRecording.id} className="audio-container">
-					<li>
-						<audio
-							ref={addRecording.src}
-							src={addRecording.blobUrl}
-							controls="controls"
-						></audio>
-					</li>
+					<audio src={addRecording.url} controls="controls"></audio>
 				</div>
 			))}
 		</div>
