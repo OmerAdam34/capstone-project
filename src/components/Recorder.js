@@ -13,8 +13,7 @@ export default function Recorder() {
 		setAddRecordings([...addRecordings, {id: nanoid(), url: blobUrl, src: audiofile}]);
 	};
 
-	const [addRecordings, setAddRecordings] = useState([{id: nanoid(), url: '', src: ''}]);
-	console.log(addRecordings);
+	const [addRecordings, setAddRecordings] = useState([]);
 
 	useEffect(() => {
 		recorder.current = new MicRecorder({bitRate: 128});
