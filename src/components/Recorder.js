@@ -13,6 +13,10 @@ export default function Recorder() {
 		setAddRecordings([...addRecordings, {id: nanoid(), url: blobUrl, src: audiofile}]);
 	};
 
+	const deleteAudio = id => {
+		setAddRecordings(addRecordings.filter(addRecording => addRecording.id !== id));
+	};
+
 	const [addRecordings, setAddRecordings] = useState([]);
 
 	useEffect(() => {
@@ -52,6 +56,7 @@ export default function Recorder() {
 			{addRecordings.map(addRecording => (
 				<div key={addRecording.id} className="audio-container">
 					<audio src={addRecording.url} controls="controls"></audio>
+					<button onClick={() => deleteAudio(addRecording.id)}>Delete</button>
 				</div>
 			))}
 		</div>
