@@ -55,6 +55,11 @@ function MusicPlayer() {
 			producer: 'Unknown',
 			src: './beats/beat10.mp3',
 		},
+		{
+			title: 'Beat 11',
+			producer: 'Unknown',
+			src: './beats/beat11.mp3',
+		},
 	]);
 
 	const [currentSongIndex, setCurrentSongIndex] = useState(0);
