@@ -1,11 +1,18 @@
 import MicRecorder from 'mic-recorder-to-mp3';
 import {nanoid} from 'nanoid';
+import {useRouter} from 'next/router';
 import {useEffect, useState, useRef} from 'react';
 import EdiText from 'react-editext';
 import {FaMicrophone} from 'react-icons/fa';
 import {FaMicrophoneAltSlash} from 'react-icons/fa';
 
 export default function Recorder() {
+	const router = useRouter();
+
+	function handleSubmit() {
+		router.push('/start');
+	}
+
 	const recorder = useRef(null);
 
 	const [isRecording, setIsRecording] = useState(null);
@@ -67,6 +74,9 @@ export default function Recorder() {
 					<button onClick={() => deleteAudio(addRecording.id)}>Delete</button>
 				</div>
 			))}
+			<div>
+				<button onClick={handleSubmit}>SEE INTRODUCTION</button>
+			</div>
 		</div>
 	);
 }
