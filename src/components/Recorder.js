@@ -17,14 +17,11 @@ export default function Recorder() {
 
 	const [isRecording, setIsRecording] = useState(null);
 
-	const [value, setValue] = useState('Give your track a name!');
-
-	const handleSave = value => {
-		setValue(value);
-	};
-
 	const handleAddRecording = (blobUrl, audiofile) => {
-		setAddRecordings([...addRecordings, {id: nanoid(), url: blobUrl, src: audiofile}]);
+		setAddRecordings([
+			...addRecordings,
+			{id: nanoid(), url: blobUrl, src: audiofile, value: value},
+		]);
 	};
 
 	const deleteAudio = id => {
@@ -32,6 +29,12 @@ export default function Recorder() {
 	};
 
 	const [addRecordings, setAddRecordings] = useState([]);
+
+	const [value, setValue] = useState(['Give your track a name!']);
+
+	const handleSave = value => {
+		setValue(value);
+	};
 
 	useEffect(() => {
 		recorder.current = new MicRecorder({bitRate: 128});
@@ -69,7 +72,15 @@ export default function Recorder() {
 			<h4>MY RECORDED TRACKS:</h4>
 			{addRecordings.map(addRecording => (
 				<div key={addRecording.id} className="audio-container">
-					<EdiText value={value} type="text" onSave={handleSave} id={nanoid()} />
+					<EdiText
+						value={addRecording.value}
+						type="text"
+						onSave={handleSave}
+						id={addRecording.id}
+						editButtonContent={'Title'}
+						editOnViewClick={false}
+						submitOnEnter={true}
+					/>
 					<audio src={addRecording.url} controls="controls"></audio>
 					<button onClick={() => deleteAudio(addRecording.id)}>Delete</button>
 				</div>
