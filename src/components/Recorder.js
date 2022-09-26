@@ -20,7 +20,7 @@ export default function Recorder() {
 	const handleAddRecording = (blobUrl, audiofile) => {
 		setAddRecordings([
 			...addRecordings,
-			{id: nanoid(), url: blobUrl, src: audiofile, value: value},
+			{id: nanoid(), url: blobUrl, src: audiofile, description: 'Add your des.'},
 		]);
 	};
 
@@ -30,10 +30,16 @@ export default function Recorder() {
 
 	const [addRecordings, setAddRecordings] = useState([]);
 
-	const [value, setValue] = useState(['Give your track a name!']);
+	//const [value, setValue] = useState(['Give your track a name!']);
 
-	const handleSave = value => {
-		setValue(value);
+	const handleSave = (value, id) => {
+		setAddRecordings(
+			addRecordings.map(addRecording => {
+				return addRecording.id === id
+					? {...addRecording, description: value}
+					: addRecording;
+			})
+		);
 	};
 
 	useEffect(() => {
@@ -73,9 +79,9 @@ export default function Recorder() {
 			{addRecordings.map(addRecording => (
 				<div key={addRecording.id} className="audio-container">
 					<EdiText
-						value={addRecording.value}
+						value={addRecording.description}
 						type="text"
-						onSave={handleSave}
+						onSave={value => handleSave(value, addRecording.id)}
 						id={addRecording.id}
 						editButtonContent={'Title'}
 						editOnViewClick={false}
