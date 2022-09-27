@@ -16,7 +16,7 @@ function Player(props) {
 		} else {
 			audioElement.current.pause();
 		}
-	}, [isPlaying]);
+	});
 
 	const SkipSong = (forwards = true) => {
 		if (forwards) {
