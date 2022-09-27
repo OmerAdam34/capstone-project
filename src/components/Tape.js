@@ -1,14 +1,22 @@
 import Lottie from 'lottie-react';
-import {useRef} from 'react';
+import {useRef, useEffect} from 'react';
 
 import tape from '../../tape.json';
 
-export default function Tape() {
+export default function Tape({isPlaying}) {
 	const lottieRef = useRef();
+
+	useEffect(() => {
+		if (isPlaying) {
+			lottieRef.current.play();
+		} else {
+			lottieRef.current.pause();
+		}
+	}, [isPlaying]);
+
 	return (
 		<div>
-			<h1>Tape</h1>
-			<Lottie lottieRef={lottieRef} animationData={tape} />
+			<Lottie lottieRef={lottieRef} animationData={tape} play={isPlaying} />
 		</div>
 	);
 }

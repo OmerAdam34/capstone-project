@@ -4,6 +4,7 @@ import {useRef} from 'react';
 
 import PlayerControls from './PlayerControls';
 import PlayerDetails from './PlayerDetails';
+import Tape from './Tape';
 
 function Player(props) {
 	const audioElement = useRef(null);
@@ -15,7 +16,7 @@ function Player(props) {
 		} else {
 			audioElement.current.pause();
 		}
-	});
+	}, [isPlaying]);
 
 	const SkipSong = (forwards = true) => {
 		if (forwards) {
@@ -48,6 +49,7 @@ function Player(props) {
 			<audio src={props.songs[props.currentSongIndex].src} ref={audioElement} />
 			<PlayerDetails song={props.songs[props.currentSongIndex]} />
 			<PlayerControls isPlaying={isPlaying} setIsPlaying={setIsPlaying} SkipSong={SkipSong} />
+			<Tape isPlaying={isPlaying} />
 		</div>
 	);
 }
