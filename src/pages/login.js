@@ -15,6 +15,7 @@ export default function Login() {
 	}
 	return (
 		<>
+			{isPreview ? 'true' : 'false'}
 			Not signed in <br />
 			<button
 				onClick={() => {
