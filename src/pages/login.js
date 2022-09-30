@@ -1,8 +1,8 @@
 import {useSession, signIn, signOut} from 'next-auth/react';
+const isPreview = process.env.VERCEL_ENV === 'preview';
 
 export default function Login() {
 	const {data: session} = useSession();
-	const isPreview = process.env.VERCEL_ENV === 'preview';
 
 	if (session) {
 		return (
