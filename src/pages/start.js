@@ -1,5 +1,6 @@
 import {Parallax, ParallaxLayer} from '@react-spring/parallax';
 import Link from 'next/link';
+import {IoIosArrowDown} from 'react-icons/io';
 
 export default function start() {
 	return (
@@ -12,11 +13,13 @@ export default function start() {
 					speed={2.5}
 					style={{
 						display: 'flex',
+						flexDirection: 'column',
 						justifyContent: 'center',
 						alignItems: 'center',
 					}}
 				>
 					<h2>1. Choose a beat</h2>
+					<IoIosArrowDown />
 				</ParallaxLayer>
 
 				<ParallaxLayer offset={1} speed={2} style={{backgroundColor: '#232323'}} />
@@ -26,12 +29,14 @@ export default function start() {
 					speed={2.5}
 					style={{
 						display: 'flex',
+						flexDirection: 'column',
 						justifyContent: 'center',
 						alignItems: 'center',
 						color: 'white',
 					}}
 				>
 					<h2>2. Create your own lyrics</h2>
+					<IoIosArrowDown />
 				</ParallaxLayer>
 
 				<ParallaxLayer offset={2} speed={2} style={{backgroundColor: '#232323'}} />
@@ -41,12 +46,14 @@ export default function start() {
 					speed={2.5}
 					style={{
 						display: 'flex',
+						flexDirection: 'column',
 						justifyContent: 'center',
 						alignItems: 'center',
 						color: 'white',
 					}}
 				>
 					<h2>3. Try to sing/rap your lyrics with the beat</h2>
+					<IoIosArrowDown />
 				</ParallaxLayer>
 
 				<ParallaxLayer offset={3} speed={2} style={{backgroundColor: '#232323'}} />
@@ -56,12 +63,14 @@ export default function start() {
 					speed={2.5}
 					style={{
 						display: 'flex',
+						flexDirection: 'column',
 						justifyContent: 'center',
 						alignItems: 'center',
 						color: 'white',
 					}}
 				>
 					<h2>4. All right, show your skills and record it</h2>
+					<IoIosArrowDown />
 				</ParallaxLayer>
 
 				<ParallaxLayer
@@ -69,6 +78,7 @@ export default function start() {
 					speed={2.5}
 					style={{
 						display: 'flex',
+						flexDirection: 'column',
 						justifyContent: 'center',
 						alignItems: 'center',
 					}}
