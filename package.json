@@ -19,6 +19,8 @@
     "toc": "npx markdown-toc@1 README.md -i"
   },
   "dependencies": {
+    "@react-spring/parallax": "^9.5.5",
+    "@react-spring/web": "^9.5.5",
     "axios": "0.27.2",
     "lottie-react": "^2.3.1",
     "mic-recorder-to-mp3": "^2.2.2",
@@ -29,6 +31,7 @@
     "react-dom": "18.2.0",
     "react-editext": "^5.0.2",
     "react-icons": "^4.4.0",
+    "react-spring": "^9.5.5",
     "styled-components": "5.3.5",
     "uuid": "^9.0.0",
     "zustand": "4.1.1"
