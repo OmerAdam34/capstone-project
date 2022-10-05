@@ -2,6 +2,8 @@ import {Parallax, ParallaxLayer} from '@react-spring/parallax';
 import Link from 'next/link';
 import {IoIosArrowDown} from 'react-icons/io';
 
+import StyledButton from '../StyledButton';
+
 export default function start() {
 	return (
 		<div>
@@ -18,16 +20,22 @@ export default function start() {
 						alignItems: 'center',
 					}}
 				>
+					<video autoPlay loop muted>
+						<source src="/videos/bg1.mp4" type="video/mp4" />
+					</video>
 					<h2>1. Choose a beat</h2>
 					<IoIosArrowDown />
 				</ParallaxLayer>
-
+				<video autoPlay loop muted>
+					<source src="/videos/bg1.mp4" type="video/mp4" />
+				</video>
 				<ParallaxLayer offset={1} speed={2} style={{backgroundColor: '#232323'}} />
 
 				<ParallaxLayer
 					offset={1}
 					speed={2.5}
 					style={{
+						position: 'absolute',
 						display: 'flex',
 						flexDirection: 'column',
 						justifyContent: 'center',
@@ -39,8 +47,6 @@ export default function start() {
 					<IoIosArrowDown />
 				</ParallaxLayer>
 
-				<ParallaxLayer offset={2} speed={2} style={{backgroundColor: '#232323'}} />
-
 				<ParallaxLayer
 					offset={2}
 					speed={2.5}
@@ -49,7 +55,7 @@ export default function start() {
 						flexDirection: 'column',
 						justifyContent: 'center',
 						alignItems: 'center',
-						color: 'white',
+						color: 'black',
 					}}
 				>
 					<h2>3. Try to sing/rap your lyrics with the beat</h2>
@@ -85,9 +91,9 @@ export default function start() {
 				>
 					<h2>5. Download and send your own mp3 to someone or collect it</h2>
 					<div>
-						<button>
+						<StyledButton>
 							<Link href="/">START </Link>
-						</button>
+						</StyledButton>
 					</div>
 				</ParallaxLayer>
 			</Parallax>
