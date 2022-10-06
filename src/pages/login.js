@@ -1,4 +1,9 @@
 import {useSession, signIn, signOut} from 'next-auth/react';
+import {DiGithubFull} from 'react-icons/di';
+import {ImGithub} from 'react-icons/im';
+
+import {LoginPage} from '../styled-components/Login.styled';
+import {LogoContainer} from '../styled-components/LogoContainer.styled';
 
 const isPreview = process.env.VERCEL_ENV === 'preview';
 
@@ -7,27 +12,38 @@ export default function Login() {
 
 	if (session) {
 		return (
-			<div>
-				<p>WELCOME, {session.user.name}</p>
+			<LoginPage>
+				<p>
+					WELCOME,
+					<br /> {session.user.name}
+				</p>
+				<br />
 				SIGNED IN AS {session.user.email} <br />
 				<button onClick={() => signOut()}>Sign out</button>
-			</div>
+			</LoginPage>
 		);
 	}
 	return (
-		<div>
+		<LoginPage>
 			<div>
-				<h2>WELCOME</h2>
-				<h4> </h4>
-				<h6>LOGIN</h6>
+				<h2>WELCOME TO</h2>
+				<div>
+					<h1>LIL </h1>
+					<p>STUDIO</p>
+				</div>
 			</div>
-			<button
-				onClick={() => {
-					signIn(isPreview ? 'credentials' : 'github');
-				}}
-			>
-				Sign in
-			</button>
-		</div>
+
+			<p>SIGN IN WITH:</p>
+			<LogoContainer>
+				<ImGithub style={{width: '50px', height: '50px'}} />
+				<button
+					onClick={() => {
+						signIn(isPreview ? 'credentials' : 'github');
+					}}
+				>
+					<DiGithubFull />
+				</button>
+			</LogoContainer>
+		</LoginPage>
 	);
 }
