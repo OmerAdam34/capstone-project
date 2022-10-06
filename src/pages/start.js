@@ -2,8 +2,6 @@ import {Parallax, ParallaxLayer} from '@react-spring/parallax';
 import Link from 'next/link';
 import {IoIosArrowDown} from 'react-icons/io';
 
-import StyledButton from '../StyledButton';
-
 export default function start() {
 	return (
 		<div>
@@ -12,7 +10,7 @@ export default function start() {
 			<Parallax pages={5} style={{top: '0', left: '0'}}>
 				<ParallaxLayer
 					offset={0}
-					speed={2.5}
+					speed={0}
 					style={{
 						display: 'flex',
 						flexDirection: 'column',
@@ -20,20 +18,18 @@ export default function start() {
 						alignItems: 'center',
 					}}
 				>
-					<video autoPlay loop muted>
+					<h2>1. Choose a beat</h2>
+					<video autoPlay loop muted height="150%" width="150%">
 						<source src="/videos/bg1.mp4" type="video/mp4" />
 					</video>
-					<h2>1. Choose a beat</h2>
-					<IoIosArrowDown />
+					<IoIosArrowDown style={{width: '25px', height: '25px'}} />
 				</ParallaxLayer>
-				<video autoPlay loop muted>
-					<source src="/videos/bg1.mp4" type="video/mp4" />
-				</video>
+
 				<ParallaxLayer offset={1} speed={2} style={{backgroundColor: '#232323'}} />
 
 				<ParallaxLayer
 					offset={1}
-					speed={2.5}
+					speed={0}
 					style={{
 						position: 'absolute',
 						display: 'flex',
@@ -49,7 +45,7 @@ export default function start() {
 
 				<ParallaxLayer
 					offset={2}
-					speed={2.5}
+					speed={0.5}
 					style={{
 						display: 'flex',
 						flexDirection: 'column',
@@ -66,7 +62,7 @@ export default function start() {
 
 				<ParallaxLayer
 					offset={3}
-					speed={2.5}
+					speed={0}
 					style={{
 						display: 'flex',
 						flexDirection: 'column',
@@ -81,7 +77,7 @@ export default function start() {
 
 				<ParallaxLayer
 					offset={4}
-					speed={2.5}
+					speed={0.5}
 					style={{
 						display: 'flex',
 						flexDirection: 'column',
@@ -91,9 +87,9 @@ export default function start() {
 				>
 					<h2>5. Download and send your own mp3 to someone or collect it</h2>
 					<div>
-						<StyledButton>
+						<button>
 							<Link href="/">START </Link>
-						</StyledButton>
+						</button>
 					</div>
 				</ParallaxLayer>
 			</Parallax>

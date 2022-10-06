@@ -1,4 +1,5 @@
 import {useSession, signIn, signOut} from 'next-auth/react';
+
 const isPreview = process.env.VERCEL_ENV === 'preview';
 
 export default function Login() {
@@ -6,16 +7,20 @@ export default function Login() {
 
 	if (session) {
 		return (
-			<>
-				<p>Welcome, {session.user.name}</p>
-				Signed in as {session.user.email} <br />
+			<div>
+				<p>WELCOME, {session.user.name}</p>
+				SIGNED IN AS {session.user.email} <br />
 				<button onClick={() => signOut()}>Sign out</button>
-			</>
+			</div>
 		);
 	}
 	return (
-		<>
-			Not signed in <br />
+		<div>
+			<div>
+				<h2>WELCOME</h2>
+				<h4> </h4>
+				<h6>LOGIN</h6>
+			</div>
 			<button
 				onClick={() => {
 					signIn(isPreview ? 'credentials' : 'github');
@@ -23,6 +28,6 @@ export default function Login() {
 			>
 				Sign in
 			</button>
-		</>
+		</div>
 	);
 }
