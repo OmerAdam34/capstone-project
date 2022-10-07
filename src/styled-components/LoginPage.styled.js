@@ -5,7 +5,8 @@ export const LoginPage = styled.div`
 	flex-direction: column;
 	align-items: center;
 	margin-top: 50%;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bolder;
 	text-align: center;
 	gap: 20px;
 `;

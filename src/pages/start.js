@@ -18,10 +18,7 @@ export default function start() {
 						alignItems: 'center',
 					}}
 				>
-					<h2>1. Choose a beat</h2>
-					<video autoPlay loop muted height="150%" width="150%">
-						<source src="/videos/bg1.mp4" type="video/mp4" />
-					</video>
+					<h3>1. Choose a beat</h3>
 					<IoIosArrowDown style={{width: '25px', height: '25px'}} />
 				</ParallaxLayer>
 
@@ -39,7 +36,7 @@ export default function start() {
 						color: 'white',
 					}}
 				>
-					<h2>2. Create your own lyrics</h2>
+					<h3>2. Create your lyrics</h3>
 					<IoIosArrowDown />
 				</ParallaxLayer>
 
@@ -54,8 +51,7 @@ export default function start() {
 						color: 'black',
 					}}
 				>
-					<h2>3. Try to sing/rap your lyrics with the beat</h2>
-
+					<h3>3. Try to rap with a beat</h3>
 					<IoIosArrowDown />
 				</ParallaxLayer>
 
@@ -72,7 +68,7 @@ export default function start() {
 						color: 'white',
 					}}
 				>
-					<h2>4. All right, show your skills and record it</h2>
+					<h3>4. Show your skills and record it</h3>
 					<IoIosArrowDown />
 				</ParallaxLayer>
 
@@ -86,11 +82,10 @@ export default function start() {
 						alignItems: 'center',
 					}}
 				>
-					<h2>5. Download and send your own mp3 to someone or collect it</h2>
+					<h3>5. Download and send your own mp3 to someone or collect it</h3>
+
 					<div>
-						<button>
-							<Link href="/">START </Link>
-						</button>
+						<Link href="/">START </Link>
 					</div>
 				</ParallaxLayer>
 			</Parallax>
