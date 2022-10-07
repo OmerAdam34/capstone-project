@@ -55,6 +55,7 @@ export default function start() {
 					}}
 				>
 					<h2>3. Try to sing/rap your lyrics with the beat</h2>
+
 					<IoIosArrowDown />
 				</ParallaxLayer>
 

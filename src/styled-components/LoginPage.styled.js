@@ -7,4 +7,5 @@ export const LoginPage = styled.div`
 	margin-top: 50%;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	text-align: center;
+	gap: 20px;
 `;
