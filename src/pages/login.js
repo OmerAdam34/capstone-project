@@ -5,12 +5,23 @@ import {ImGithub} from 'react-icons/im';
 import styled from 'styled-components';
 
 import Logo from '../../public/logo/logo-no-background.png';
+import Logo2 from '../../public/logo/logo-white.png';
 import {Button} from '../styled-components/Button.styled';
 import {GithubContainer} from '../styled-components/GithubContainer.styled';
 import {Headline} from '../styled-components/Headline.styled';
 import {LoginPage} from '../styled-components/LoginPage.styled';
 
 const isPreview = process.env.VERCEL_ENV === 'preview';
+
+const LogoWhite = styled.div`
+	position: absolute;
+	top: -30px;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 60px 40px -7px;
+`;
 
 const LogoImage = styled.div`
 	width: 270px;
@@ -27,7 +38,10 @@ export default function Login() {
 	if (session) {
 		return (
 			<div>
-				<h2>WELCOME,</h2>
+				<h2>WELCOME TO</h2>
+				<LogoImage>
+					<Image src={Logo} width="1000" height="313" alt="logo" objectFit="cover" />
+				</LogoImage>
 				<h1>{session.user.name}</h1>
 				<p>SIGNED IN AS: </p>
 				<p>{session.user.email} </p>
@@ -38,9 +52,9 @@ export default function Login() {
 	}
 	return (
 		<LoginPage>
-			<LogoImage>
-				<Image src={Logo} width="1000" height="313" alt="logo" objectFit="cover" />
-			</LogoImage>
+			<LogoWhite>
+				<Image src={Logo2} width="1000" height="1000" alt="logo" objectFit="cover" />
+			</LogoWhite>
 
 			<Headline>SIGN IN WITH</Headline>
 

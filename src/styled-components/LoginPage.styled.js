@@ -4,7 +4,7 @@ export const LoginPage = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 50%;
+	margin-top: 95%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bolder;
 	text-align: center;
