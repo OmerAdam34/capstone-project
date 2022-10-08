@@ -8,6 +8,7 @@ import Logo from '../../public/logo/logo-no-background.png';
 import Logo2 from '../../public/logo/logo-white.png';
 import {Button} from '../styled-components/Button.styled';
 import {GithubContainer} from '../styled-components/GithubContainer.styled';
+import {GithubProfilePicture} from '../styled-components/GithubProfilePicture.styled';
 import {Headline} from '../styled-components/Headline.styled';
 import {LoginPage} from '../styled-components/LoginPage.styled';
 
@@ -20,7 +21,8 @@ const LogoWhite = styled.div`
 	left: 0;
 	width: 100%;
 	height: auto;
-	box-shadow: rgba(0, 0, 0, 0.2) 0 60px 40px -7px;
+	background-color: black;
+	box-shadow: rgba(0, 0, 0, 0.56) 0 22px 70px 4px;
 `;
 
 const LogoImage = styled.div`
@@ -29,7 +31,6 @@ const LogoImage = styled.div`
 	margin-top: -15%;
 	padding: 30px 20px 30px 20px;
 	border: 3px solid black;
-	box-shadow: 1px 1px 0 0, 2px 2px 0 0, 3px 3px 0 0, 4px 4px 0 0, 5px 5px 0 0;
 `;
 
 export default function Login() {
@@ -38,15 +39,17 @@ export default function Login() {
 	if (session) {
 		return (
 			<div>
-				<h2>WELCOME TO</h2>
-				<LogoImage>
-					<Image src={Logo} width="1000" height="313" alt="logo" objectFit="cover" />
-				</LogoImage>
-				<h1>{session.user.name}</h1>
+				<GithubProfilePicture src={session.user.image} alt="GithubImage" />
+				<Button onClick={() => signOut()}>Sign out</Button>
+				<h2>WELCOME {session.user.name} </h2>
 				<p>SIGNED IN AS: </p>
 				<p>{session.user.email} </p>
 
-				<Button onClick={() => signOut()}>Sign out</Button>
+				<LogoImage>
+					<Image src={Logo} width="1000" height="313" alt="logo" objectFit="cover" />
+				</LogoImage>
+
+				<Button>START</Button>
 			</div>
 		);
 	}
