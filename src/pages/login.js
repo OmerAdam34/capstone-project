@@ -44,11 +44,11 @@ export default function Login() {
 				<h2>WELCOME {session.user.name} </h2>
 				<p>SIGNED IN AS: </p>
 				<p>{session.user.email} </p>
+				<h4>COLLECTION:</h4>
 
 				<LogoImage>
 					<Image src={Logo} width="1000" height="313" alt="logo" objectFit="cover" />
 				</LogoImage>
-
 				<Button>START</Button>
 			</div>
 		);

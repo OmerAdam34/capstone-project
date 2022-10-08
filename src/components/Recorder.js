@@ -10,7 +10,7 @@ export default function Recorder() {
 	const router = useRouter();
 
 	function handleSubmit() {
-		router.push('/start');
+		router.push('/introduction');
 	}
 
 	const recorder = useRef(null);
