@@ -30,7 +30,6 @@ const LogoImage = styled.div`
 	height: auto;
 	margin-top: -15%;
 	padding: 30px 20px 30px 20px;
-	border: 3px solid black;
 `;
 
 export default function Login() {
@@ -47,7 +46,7 @@ export default function Login() {
 				<h4>COLLECTION:</h4>
 
 				<LogoImage>
-					<Image src={Logo} width="1000" height="313" alt="logo" objectFit="cover" />
+					<Image src={Logo} width="1000" height="237" alt="logo" objectFit="cover" />
 				</LogoImage>
 				<Button>START</Button>
 			</div>
