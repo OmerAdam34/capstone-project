@@ -1,16 +1,42 @@
 import {Parallax, ParallaxLayer} from '@react-spring/parallax';
+import Image from 'next/image';
 import Link from 'next/link';
 import {IoIosArrowDown} from 'react-icons/io';
+import styled from 'styled-components';
 
+import LogoIcon from '../../public/logo/logo-small.png';
 import {Button} from '../styled-components/Button.styled';
+import {IntroductionContainer} from '../styled-components/IntroductionContainer.styled';
+import {IntroductionHeadline} from '../styled-components/IntroductionHeadline.styled';
 import {IntroductionNotes} from '../styled-components/IntroductionNotes.styled';
+
+const Icon = styled.div`
+	position: absolute;
+	right: 0;
+	left: 0;
+	width: 95%;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	object-fit: cover;
+`;
 
 export default function introduction() {
 	return (
 		<div>
 			<Parallax pages={5} style={{top: '0', left: '0'}}>
-				<ParallaxLayer sticky={{start: 0, end: 4}}>
-					<IntroductionNotes>Introduction</IntroductionNotes>
+				<ParallaxLayer sticky={{start: 0}}>
+					<IntroductionContainer>
+						<Icon>
+							<Image
+								src={LogoIcon}
+								width="1000"
+								height="156"
+								alt="Icon"
+								objectFit="cover"
+							/>
+						</Icon>
+						<IntroductionHeadline>Introduction</IntroductionHeadline>
+					</IntroductionContainer>
 				</ParallaxLayer>
 
 				<ParallaxLayer
