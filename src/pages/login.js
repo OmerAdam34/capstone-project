@@ -4,8 +4,8 @@ import {DiGithubFull} from 'react-icons/di';
 import {ImGithub} from 'react-icons/im';
 import styled from 'styled-components';
 
-import Logo from '../../public/logo/logo-no-background.png';
-import Logo2 from '../../public/logo/logo-white.png';
+import Logo from '../../public/images/logo-no-background.png';
+import Logo2 from '../../public/images/logo-white.png';
 import {Button} from '../styled-components/Button.styled';
 import {GithubContainer} from '../styled-components/GithubContainer.styled';
 import {GithubProfilePicture} from '../styled-components/GithubProfilePicture.styled';

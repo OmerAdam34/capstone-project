@@ -4,7 +4,8 @@ import Link from 'next/link';
 import {IoIosArrowDown} from 'react-icons/io';
 import styled from 'styled-components';
 
-import LogoIcon from '../../public/logo/logo-small.png';
+import IntroductionOne from '../../public/images/chooseBeat.png';
+import LogoIcon from '../../public/images/logo-small.png';
 import {Button} from '../styled-components/Button.styled';
 import {IntroductionContainer} from '../styled-components/IntroductionContainer.styled';
 import {IntroductionHeadline} from '../styled-components/IntroductionHeadline.styled';
@@ -20,11 +21,22 @@ const Icon = styled.div`
 	object-fit: cover;
 `;
 
+const StepOne = styled.div`
+	position: absolute;
+	right: 0;
+	bottom: 60px;
+	left: 0;
+	width: 95%;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	object-fit: cover;
+`;
+
 export default function introduction() {
 	return (
 		<div>
 			<Parallax pages={5} style={{top: '0', left: '0'}}>
-				<ParallaxLayer sticky={{start: 0}}>
+				<ParallaxLayer sticky={{start: 0, end: 4}}>
 					<IntroductionContainer>
 						<Icon>
 							<Image
@@ -51,7 +63,23 @@ export default function introduction() {
 					<IntroductionNotes style={{padding: '10px'}}>
 						1. Choose a beat
 					</IntroductionNotes>
-					<IoIosArrowDown style={{width: '30px', height: '30px'}} />
+					<IoIosArrowDown
+						style={{
+							width: '30px',
+							height: '30px',
+							position: 'relative',
+							left: '46%',
+						}}
+					/>
+					<StepOne>
+						<Image
+							src={IntroductionOne}
+							width="2181"
+							height="677"
+							alt="Icon"
+							objectFit="cover"
+						/>
+					</StepOne>
 				</ParallaxLayer>
 
 				<ParallaxLayer offset={1} speed={2} style={{backgroundColor: '#232323'}} />
