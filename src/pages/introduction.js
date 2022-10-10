@@ -147,6 +147,7 @@ export default function introduction() {
 						justifyContent: 'center',
 						alignItems: 'center',
 						color: 'white',
+						zIndex: '1',
 					}}
 				>
 					<IntroductionNotes style={{padding: '10px'}}>

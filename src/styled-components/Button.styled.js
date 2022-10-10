@@ -35,3 +35,9 @@ export const IntroductionButton = styled(Button)`
 	top: 97.5%;
 	left: 9rem;
 `;
+
+export const SignOutButton = styled(Button)`
+	position: relative;
+	top: 50px;
+	right: 8rem;
+`;

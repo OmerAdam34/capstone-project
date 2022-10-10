@@ -30,8 +30,6 @@ export default function Recorder() {
 
 	const [addRecordings, setAddRecordings] = useState([]);
 
-	//const [value, setValue] = useState(['Give your track a name!']);
-
 	const handleSave = (value, id) => {
 		setAddRecordings(
 			addRecordings.map(addRecording => {
