@@ -9,7 +9,8 @@ import IntroductionThree from '../../public/images/karaoke.png';
 import LogoIcon from '../../public/images/logo-small.png';
 import IntroductionTwo from '../../public/images/lyrics.png';
 import IntroductionFour from '../../public/images/recording.png';
-import {Button} from '../styled-components/Button.styled';
+import IntroductionFive from '../../public/images/send.png';
+import {IntroductionButton} from '../styled-components/Button.styled';
 import {IntroductionContainer} from '../styled-components/IntroductionContainer.styled';
 import {IntroductionHeadline} from '../styled-components/IntroductionHeadline.styled';
 import {IntroductionNotes} from '../styled-components/IntroductionNotes.styled';
@@ -62,6 +63,17 @@ const StepFour = styled.div`
 	position: absolute;
 	right: 0;
 	bottom: 750px;
+	left: 0;
+	width: 95%;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	object-fit: cover;
+`;
+
+const StepFive = styled.div`
+	position: absolute;
+	top: 420px;
+	right: 0;
 	left: 0;
 	width: 95%;
 	height: auto;
@@ -219,11 +231,19 @@ export default function introduction() {
 					<IntroductionNotes style={{padding: '10px'}}>
 						5. Download and send your own mp3 to someone or collect it
 					</IntroductionNotes>
-
-					<Button>
-						<Link href="/">START </Link>
-					</Button>
+					<StepFive>
+						<Image
+							src={IntroductionFive}
+							width="1773"
+							height="604"
+							alt="Icon"
+							objectFit="cover"
+						/>
+					</StepFive>
 				</ParallaxLayer>
+				<IntroductionButton>
+					<Link href="/">START </Link>
+				</IntroductionButton>
 			</Parallax>
 		</div>
 	);
