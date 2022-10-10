@@ -5,8 +5,10 @@ import {IoIosArrowDown} from 'react-icons/io';
 import styled from 'styled-components';
 
 import IntroductionOne from '../../public/images/chooseBeat.png';
+import IntroductionThree from '../../public/images/karaoke.png';
 import LogoIcon from '../../public/images/logo-small.png';
 import IntroductionTwo from '../../public/images/lyrics.png';
+import IntroductionFour from '../../public/images/recording.png';
 import {Button} from '../styled-components/Button.styled';
 import {IntroductionContainer} from '../styled-components/IntroductionContainer.styled';
 import {IntroductionHeadline} from '../styled-components/IntroductionHeadline.styled';
@@ -37,6 +39,29 @@ const StepTwo = styled.div`
 	position: absolute;
 	right: 0;
 	bottom: 420px;
+	left: 0;
+	width: 95%;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	object-fit: cover;
+`;
+
+const StepThree = styled.div`
+	position: absolute;
+	top: 600px;
+	right: 0;
+	left: 0;
+	width: 95%;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	object-fit: cover;
+	transform: rotate(-10deg);
+`;
+
+const StepFour = styled.div`
+	position: absolute;
+	right: 0;
+	bottom: 750px;
 	left: 0;
 	width: 95%;
 	height: auto;
@@ -142,6 +167,15 @@ export default function introduction() {
 						3. Try to rap with a beat
 					</IntroductionNotes>
 					<IoIosArrowDown style={{width: '30px', height: '30px'}} />
+					<StepThree>
+						<Image
+							src={IntroductionThree}
+							width="3009"
+							height="1158"
+							alt="Icon"
+							objectFit="cover"
+						/>
+					</StepThree>
 				</ParallaxLayer>
 
 				<ParallaxLayer offset={3} speed={2} style={{backgroundColor: '#232323'}} />
@@ -173,6 +207,15 @@ export default function introduction() {
 						alignItems: 'center',
 					}}
 				>
+					<StepFour>
+						<Image
+							src={IntroductionFour}
+							width="1307"
+							height="840"
+							alt="Icon"
+							objectFit="cover"
+						/>
+					</StepFour>
 					<IntroductionNotes style={{padding: '10px'}}>
 						5. Download and send your own mp3 to someone or collect it
 					</IntroductionNotes>
