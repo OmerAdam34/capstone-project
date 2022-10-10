@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import IntroductionOne from '../../public/images/chooseBeat.png';
 import LogoIcon from '../../public/images/logo-small.png';
+import IntroductionTwo from '../../public/images/lyrics.png';
 import {Button} from '../styled-components/Button.styled';
 import {IntroductionContainer} from '../styled-components/IntroductionContainer.styled';
 import {IntroductionHeadline} from '../styled-components/IntroductionHeadline.styled';
@@ -25,6 +26,17 @@ const StepOne = styled.div`
 	position: absolute;
 	right: 0;
 	bottom: 60px;
+	left: 0;
+	width: 95%;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	object-fit: cover;
+`;
+
+const StepTwo = styled.div`
+	position: absolute;
+	right: 0;
+	bottom: 420px;
 	left: 0;
 	width: 95%;
 	height: auto;
@@ -82,7 +94,11 @@ export default function introduction() {
 					</StepOne>
 				</ParallaxLayer>
 
-				<ParallaxLayer offset={1} speed={2} style={{backgroundColor: '#232323'}} />
+				<ParallaxLayer
+					offset={1}
+					speed={2}
+					style={{backgroundColor: '#232323', zIndex: '1'}}
+				/>
 
 				<ParallaxLayer
 					offset={1}
@@ -113,6 +129,15 @@ export default function introduction() {
 						color: 'black',
 					}}
 				>
+					<StepTwo>
+						<Image
+							src={IntroductionTwo}
+							width="3328"
+							height="3901"
+							alt="Icon"
+							objectFit="cover"
+						/>
+					</StepTwo>
 					<IntroductionNotes style={{padding: '10px'}}>
 						3. Try to rap with a beat
 					</IntroductionNotes>
