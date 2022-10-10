@@ -38,6 +38,6 @@ export const IntroductionButton = styled(Button)`
 
 export const SignOutButton = styled(Button)`
 	position: relative;
-	top: 50px;
-	right: 8rem;
+	top: 10px;
+	left: 20px;
 `;

@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import Logo2 from '../../public/images/logo-white.png';
 import SignInLogo from '../../public/images/signInLogo.png';
 import {AccountDetails} from '../styled-components/AccountDetails.styled';
+import {MailDetail} from '../styled-components/AccountDetails.styled';
 import {Button} from '../styled-components/Button.styled';
 import {SignOutButton} from '../styled-components/Button.styled';
 import {GithubContainer} from '../styled-components/GithubContainer.styled';
@@ -62,32 +63,39 @@ export default function Login() {
 				</SignInContainer>
 				<ProfileContainer>
 					<GithubProfilePicture src={session.user.image} alt="GithubImage" />
-					<SignOutButton onClick={() => signOut()}>Sign out</SignOutButton>
-					<AccountDetails>
-						<FaUser
-							style={{
-								border: '1px solid grey',
-								borderRadius: '50px',
-								width: '25px',
-								height: '25px',
-							}}
-						/>
-						<b>USERNAME:</b>
-						<p>{session.user.name}</p>
 
-						<IoIosMail
-							style={{
-								border: '1px solid grey',
-								borderRadius: '50px',
-								width: '25px',
-								height: '25px',
-							}}
-						/>
-						<b>SIGNED IN AS: </b>
-						<p>{session.user.email} </p>
+					<FaUser
+						style={{
+							backgroundColor: 'lightgrey',
+							borderRadius: '50px',
+							width: '27px',
+							height: '27px',
+							position: 'absolute',
+							right: '172px',
+							top: '146px',
+						}}
+					/>
+					<AccountDetails>
+						USERNAME: <b> {session.user.name}</b>
 					</AccountDetails>
-					<h4>COLLECTION:</h4>
-					<Button>START</Button>
+
+					<IoIosMail
+						style={{
+							backgroundColor: 'lightgrey',
+							borderRadius: '50px',
+							width: '27px',
+							height: '27px',
+							position: 'absolute',
+							right: '172px',
+							top: '200px',
+						}}
+					/>
+					<MailDetail>
+						SIGNED IN AS: <b>{session.user.email}</b>
+					</MailDetail>
+					<SignOutButton onClick={() => signOut()}>Sign out</SignOutButton>
+
+					{/* <Button>START</Button> */}
 				</ProfileContainer>
 			</div>
 		);

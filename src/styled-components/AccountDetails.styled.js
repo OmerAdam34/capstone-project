@@ -2,11 +2,15 @@ import styled from 'styled-components';
 
 export const AccountDetails = styled.div`
 	position: absolute;
-	bottom: 400px;
-	left: 200px;
+	top: 150px;
+	left: 210px;
 	font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
 		'Helvetica Neue', sans-serif;
-	font-size: 1rem;
-	font-weight: 600;
+	font-size: 0.8rem;
+	font-weight: 550;
 	text-transform: uppercase;
+`;
+
+export const MailDetail = styled(AccountDetails)`
+	top: 200px;
 `;
