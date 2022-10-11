@@ -1,9 +1,11 @@
-function PlayerDetails(props) {
+import {Details} from '../styled-components/Details.styled';
+import {Producer} from '../styled-components/Details.styled';
+
+export default function PlayerDetails(props) {
 	return (
 		<div>
-			<h3>{props.song.title}</h3>
-			<h4>Producer: {props.song.producer}</h4>
+			<Details>title: {props.song.title}</Details>
+			<Producer>Producer: {props.song.producer}</Producer>
 		</div>
 	);
 }
-export default PlayerDetails;

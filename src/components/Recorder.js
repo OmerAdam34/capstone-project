@@ -1,18 +1,15 @@
 import MicRecorder from 'mic-recorder-to-mp3';
 import {nanoid} from 'nanoid';
-import {useRouter} from 'next/router';
+import Link from 'next/link';
 import {useEffect, useState, useRef} from 'react';
 import EdiText from 'react-editext';
 import {FaMicrophone} from 'react-icons/fa';
 import {FaMicrophoneAltSlash} from 'react-icons/fa';
 
+import {Button} from '../styled-components/Button.styled';
+import {RecordingButton} from '../styled-components/Button.styled';
+
 export default function Recorder() {
-	const router = useRouter();
-
-	function handleSubmit() {
-		router.push('/start');
-	}
-
 	const recorder = useRef(null);
 
 	const [isRecording, setIsRecording] = useState(null);
@@ -29,8 +26,6 @@ export default function Recorder() {
 	};
 
 	const [addRecordings, setAddRecordings] = useState([]);
-
-	//const [value, setValue] = useState(['Give your track a name!']);
 
 	const handleSave = (value, id) => {
 		setAddRecordings(
@@ -69,11 +64,9 @@ export default function Recorder() {
 
 	return (
 		<div>
-			<div>
-				<button onClick={isRecording ? stopRecording : startRecording}>
-					{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
-				</button>
-			</div>
+			<RecordingButton onClick={isRecording ? stopRecording : startRecording}>
+				{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
+			</RecordingButton>
 
 			<h4>MY RECORDED TRACKS:</h4>
 			{addRecordings.map(addRecording => (
@@ -88,11 +81,13 @@ export default function Recorder() {
 						submitOnEnter={true}
 					/>
 					<audio src={addRecording.url} controls="controls"></audio>
-					<button onClick={() => deleteAudio(addRecording.id)}>Delete</button>
+					<Button onClick={() => deleteAudio(addRecording.id)}>Delete</Button>
 				</div>
 			))}
 			<div>
-				<button onClick={handleSubmit}>SEE INTRODUCTION</button>
+				<Link href="/introduction">
+					<button>SEE INTRODUCTION</button>
+				</Link>
 			</div>
 		</div>
 	);
