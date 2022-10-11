@@ -223,8 +223,8 @@ export default function introduction() {
 					<StepFour>
 						<Image
 							src={IntroductionFour}
-							width="1307"
-							height="840"
+							width="2404"
+							height="1854"
 							alt="Icon"
 							objectFit="cover"
 						/>

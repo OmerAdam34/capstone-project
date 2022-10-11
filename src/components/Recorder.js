@@ -6,9 +6,11 @@ import EdiText from 'react-editext';
 import {FaMicrophone} from 'react-icons/fa';
 import {FaMicrophoneAltSlash} from 'react-icons/fa';
 
-import {Button} from '../styled-components/Button.styled';
 import {RecordingButton} from '../styled-components/Button.styled';
-import {Recordings} from '../styled-components/Recordings.styled';
+import {IntroButton} from '../styled-components/Button.styled';
+import {DeleteButton} from '../styled-components/Button.styled';
+import {CollectionHead} from '../styled-components/CollectionHead.styled';
+import {Output} from '../styled-components/Recordings.styled';
 
 export default function Recorder() {
 	const recorder = useRef(null);
@@ -68,27 +70,29 @@ export default function Recorder() {
 			<RecordingButton onClick={isRecording ? stopRecording : startRecording}>
 				{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
 			</RecordingButton>
-			<Recordings>
-				<h4>MY RECORDED TRACKS:</h4>
-				{addRecordings.map(addRecording => (
-					<div key={addRecording.id} className="audio-container">
-						<EdiText
-							value={addRecording.description}
-							type="text"
-							onSave={value => handleSave(value, addRecording.id)}
-							id={addRecording.id}
-							editButtonContent={'Title'}
-							editOnViewClick={false}
-							submitOnEnter={true}
-						/>
-						<audio src={addRecording.url} controls="controls"></audio>
-						<Button onClick={() => deleteAudio(addRecording.id)}>Delete</Button>
-					</div>
-				))}
-			</Recordings>
+
+			<CollectionHead>MY TAPES:</CollectionHead>
+
+			{addRecordings.map(addRecording => (
+				<Output key={addRecording.id} className="audio-container">
+					<EdiText
+						value={addRecording.description}
+						type="text"
+						onSave={value => handleSave(value, addRecording.id)}
+						id={addRecording.id}
+						editButtonContent={'Title'}
+						editOnViewClick={false}
+						submitOnEnter={true}
+					/>
+					<audio src={addRecording.url} controls="controls"></audio>
+
+					<DeleteButton onClick={() => deleteAudio(addRecording.id)}>DELETE</DeleteButton>
+				</Output>
+			))}
+
 			<div>
 				<Link href="/introduction">
-					<button>SEE INTRODUCTION</button>
+					<IntroButton>SEE INTRODUCTION</IntroButton>
 				</Link>
 			</div>
 		</div>

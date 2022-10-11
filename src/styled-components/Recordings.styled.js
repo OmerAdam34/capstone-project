@@ -1,9 +1,3 @@
 import styled from 'styled-components';
 
-export const Recordings = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin-top: 40%;
-`;
+export const Output = styled.div``;

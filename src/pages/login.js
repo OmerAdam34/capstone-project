@@ -6,12 +6,14 @@ import {ImGithub} from 'react-icons/im';
 import {IoIosMail} from 'react-icons/io';
 import styled from 'styled-components';
 
+import Cassette from '../../public/images/cassette.png';
 import Logo2 from '../../public/images/logo-white.png';
 import SignInLogo from '../../public/images/signInLogo.png';
 import {AccountDetails} from '../styled-components/AccountDetails.styled';
 import {MailDetail} from '../styled-components/AccountDetails.styled';
 import {Button} from '../styled-components/Button.styled';
 import {SignOutButton} from '../styled-components/Button.styled';
+import {CollectionHead} from '../styled-components/CollectionHead.styled';
 import {GithubContainer} from '../styled-components/GithubContainer.styled';
 import {GithubProfilePicture} from '../styled-components/GithubProfilePicture.styled';
 import {Headline} from '../styled-components/Headline.styled';
@@ -38,6 +40,15 @@ const SignInIcon = styled.div`
 	right: 0;
 	left: 0;
 	width: 95%;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	object-fit: cover;
+`;
+
+const CassetteImg = styled.div`
+	position: absolute;
+	top: 60%;
+	width: 20%;
 	height: auto;
 	padding: 10px 10px 10px 10px;
 	object-fit: cover;
@@ -95,6 +106,10 @@ export default function Login() {
 					</MailDetail>
 					<SignOutButton onClick={() => signOut()}>Sign out</SignOutButton>
 				</ProfileContainer>
+				<CassetteImg>
+					<Image src={Cassette} width="1307" height="840" alt="Icon" objectFit="cover" />
+				</CassetteImg>
+				<CollectionHead>COLLECTION:</CollectionHead>
 			</div>
 		);
 	}

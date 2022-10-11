@@ -24,6 +24,7 @@ export const Button = styled.button`
 		box-shadow: 0 0 0 0;
 	}
 `;
+
 export const IntroductionButton = styled(Button)`
 	position: relative;
 	top: 97.5%;
@@ -35,13 +36,24 @@ export const IntroductionButton = styled(Button)`
 	}
 `;
 
+export const IntroButton = styled(Button)`
+	position: relative;
+	top: 97.5%;
+	left: 22%;
+	:active {
+		top: 97.5%;
+		left: 22%;
+		box-shadow: 0 0 0 0;
+	}
+`;
+
 export const SignOutButton = styled(Button)`
 	position: relative;
 	top: 10px;
 	left: 20px;
 	:active {
-		top: 5px;
-		left: 5px;
+		top: 16px;
+		left: 25px;
 		box-shadow: 0 0 0 0;
 	}
 `;
@@ -98,6 +110,30 @@ export const ForwardButton = styled(Button)`
 	:active {
 		top: 43.9%;
 		left: 71%;
+		box-shadow: 0 0 0 0;
+	}
+`;
+
+export const DeleteButton = styled(Button)`
+	position: absolute;
+	margin-right: 2%;
+	padding: 3%;
+	border: 3px solid;
+	box-shadow: 1px 1px 0 0, 2px 2px 0 0, 3px 3px 0 0, 4px 4px 0 0, 5px 5px 0 0;
+	color: #000;
+	font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+		'Helvetica Neue', sans-serif;
+	font-size: 0.8rem;
+	font-weight: 800;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	user-select: none;
+	touch-action: manipulation;
+
+	:active {
+		top: 5px;
+		left: 5px;
 		box-shadow: 0 0 0 0;
 	}
 `;
