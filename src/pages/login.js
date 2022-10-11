@@ -94,8 +94,6 @@ export default function Login() {
 						SIGNED IN AS: <b>{session.user.email}</b>
 					</MailDetail>
 					<SignOutButton onClick={() => signOut()}>Sign out</SignOutButton>
-
-					{/* <Button>START</Button> */}
 				</ProfileContainer>
 			</div>
 		);

@@ -21,7 +21,7 @@ export default function HomePage() {
 					setShowApp(true);
 				}}
 			>
-				continue without login
+				CONTINUE WITHOUT LOGIN
 			</Button>
 		</div>
 	);

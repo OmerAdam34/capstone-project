@@ -1,6 +1,6 @@
 import MicRecorder from 'mic-recorder-to-mp3';
 import {nanoid} from 'nanoid';
-import {useRouter} from 'next/router';
+import Link from 'next/link';
 import {useEffect, useState, useRef} from 'react';
 import EdiText from 'react-editext';
 import {FaMicrophone} from 'react-icons/fa';
@@ -10,12 +10,6 @@ import {Button} from '../styled-components/Button.styled';
 import {RecordingButton} from '../styled-components/Button.styled';
 
 export default function Recorder() {
-	const router = useRouter();
-
-	function handleSubmit() {
-		router.push('/introduction');
-	}
-
 	const recorder = useRef(null);
 
 	const [isRecording, setIsRecording] = useState(null);
@@ -91,7 +85,9 @@ export default function Recorder() {
 				</div>
 			))}
 			<div>
-				<button onClick={handleSubmit}>SEE INTRODUCTION</button>
+				<Link href="/introduction">
+					<button>SEE INTRODUCTION</button>
+				</Link>
 			</div>
 		</div>
 	);
