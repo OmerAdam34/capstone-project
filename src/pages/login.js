@@ -13,7 +13,10 @@ import {AccountDetails} from '../styled-components/AccountDetails.styled';
 import {MailDetail} from '../styled-components/AccountDetails.styled';
 import {Button} from '../styled-components/Button.styled';
 import {SignOutButton} from '../styled-components/Button.styled';
+import {Circle} from '../styled-components/Circle.style';
 import {CollectionHead} from '../styled-components/CollectionHead.styled';
+import {CollectionHead2} from '../styled-components/CollectionHead.styled';
+import {CollectionHead3} from '../styled-components/CollectionHead.styled';
 import {GithubContainer} from '../styled-components/GithubContainer.styled';
 import {GithubProfilePicture} from '../styled-components/GithubProfilePicture.styled';
 import {Headline} from '../styled-components/Headline.styled';
@@ -47,8 +50,9 @@ const SignInIcon = styled.div`
 
 const CassetteImg = styled.div`
 	position: absolute;
-	top: 60%;
-	width: 20%;
+	bottom: 28%;
+	left: 3%;
+	width: 125px;
 	height: auto;
 	padding: 10px 10px 10px 10px;
 	object-fit: cover;
@@ -106,10 +110,15 @@ export default function Login() {
 					</MailDetail>
 					<SignOutButton onClick={() => signOut()}>Sign out</SignOutButton>
 				</ProfileContainer>
+				<Circle></Circle>
 				<CassetteImg>
 					<Image src={Cassette} width="1307" height="840" alt="Icon" objectFit="cover" />
 				</CassetteImg>
-				<CollectionHead>COLLECTION:</CollectionHead>
+				<div>
+					<CollectionHead>MY CO</CollectionHead>
+					<CollectionHead2>LLEC</CollectionHead2>
+					<CollectionHead3>TION</CollectionHead3>
+				</div>
 			</div>
 		);
 	}
