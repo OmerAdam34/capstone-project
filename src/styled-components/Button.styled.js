@@ -49,13 +49,13 @@ export const SignOutButton = styled(Button)`
 export const RecordingButton = styled(Button)`
 	position: absolute;
 	z-index: 1;
-	top: 270.24px;
-	left: 90px;
-	width: 55px;
-	height: 51px;
+	top: 43.9%;
+	left: 21%;
+	width: 15%;
+	height: 7.7%;
 	:active {
-		top: 280px;
-		left: 90px;
+		top: 43.9%;
+		left: 22%;
 		box-shadow: 0 0 0 0;
 	}
 `;
@@ -63,13 +63,13 @@ export const RecordingButton = styled(Button)`
 export const BackwardButton = styled(Button)`
 	position: absolute;
 	z-index: 1;
-	top: 270.24px;
-	left: 150px;
-	width: 55px;
-	height: 51px;
+	top: 43.9%;
+	left: 37.3%;
+	width: 15%;
+	height: 7.7%;
 	:active {
-		top: 180px;
-		left: 80px;
+		top: 43.9%;
+		left: 38.3%;
 		box-shadow: 0 0 0 0;
 	}
 `;
@@ -77,17 +77,27 @@ export const BackwardButton = styled(Button)`
 export const PlayButton = styled(Button)`
 	position: absolute;
 	z-index: 1;
-	top: 270.24px;
-	left: 210px;
-	width: 55px;
-	height: 51px;
+	top: 43.9%;
+	left: 53.6%;
+	width: 15%;
+	height: 7.7%;
+	:active {
+		top: 43.9%;
+		left: 54.6%;
+		box-shadow: 0 0 0 0;
+	}
 `;
 
 export const ForwardButton = styled(Button)`
 	position: absolute;
 	z-index: 1;
-	top: 270.24px;
-	right: 50px;
-	width: 55px;
-	height: 51px;
+	top: 43.9%;
+	left: 70%;
+	width: 15%;
+	height: 7.7%;
+	:active {
+		top: 43.9%;
+		left: 71%;
+		box-shadow: 0 0 0 0;
+	}
 `;
