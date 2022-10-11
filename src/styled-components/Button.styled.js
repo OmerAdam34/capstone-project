@@ -18,7 +18,7 @@ export const Button = styled.button`
 	user-select: none;
 	touch-action: manipulation;
 
-	.Button:active {
+	:active {
 		top: 5px;
 		left: 5px;
 		box-shadow: 0 0 0 0;
@@ -34,10 +34,20 @@ export const IntroductionButton = styled(Button)`
 	position: relative;
 	top: 97.5%;
 	left: 9rem;
+	:active {
+		top: 5px;
+		left: 5px;
+		box-shadow: 0 0 0 0;
+	}
 `;
 
 export const SignOutButton = styled(Button)`
 	position: relative;
 	top: 10px;
 	left: 20px;
+	:active {
+		top: 5px;
+		left: 5px;
+		box-shadow: 0 0 0 0;
+	}
 `;

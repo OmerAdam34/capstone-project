@@ -1,7 +1,23 @@
+import Image from 'next/image';
 import {useState} from 'react';
 import {useEffect} from 'react';
+import styled from 'styled-components';
+
+import SignInLogo from '../../public/images/signInLogo.png';
+import {SignInContainer} from '../styled-components/SignInContainer.styled';
+import {SignInHeadline} from '../styled-components/SignInHeadline.styed';
 
 import Player from './Player';
+
+const SignInIcon = styled.div`
+	position: absolute;
+	right: 0;
+	left: 0;
+	width: 95%;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	object-fit: cover;
+`;
 
 function MusicPlayer() {
 	const [songs] = useState([
@@ -77,6 +93,18 @@ function MusicPlayer() {
 
 	return (
 		<div>
+			<SignInContainer>
+				<SignInIcon>
+					<Image
+						src={SignInLogo}
+						width="2000"
+						height="313"
+						alt="Icon"
+						objectFit="cover"
+					/>
+				</SignInIcon>
+				<SignInHeadline>MANUFACTURE</SignInHeadline>
+			</SignInContainer>
 			<Player
 				currentSongIndex={currentSongIndex}
 				setCurrentSongIndex={setCurrentSongIndex}

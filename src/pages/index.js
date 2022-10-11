@@ -3,6 +3,7 @@ import {useState} from 'react';
 
 import MusicPlayer from '../components/MusicPlayer';
 import Recorder from '../components/Recorder';
+import {Button} from '../styled-components/Button.styled';
 
 export default function HomePage() {
 	const {data: session} = useSession();
@@ -15,13 +16,13 @@ export default function HomePage() {
 	) : (
 		<div>
 			<h1>Please login</h1>
-			<button
+			<Button
 				onClick={() => {
 					setShowApp(true);
 				}}
 			>
 				continue without login
-			</button>
+			</Button>
 		</div>
 	);
 }
