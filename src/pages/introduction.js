@@ -28,7 +28,7 @@ const Icon = styled.div`
 const StepOne = styled.div`
 	position: absolute;
 	right: 0;
-	bottom: 60px;
+	bottom: 5px;
 	left: 0;
 	width: 95%;
 	height: auto;
@@ -123,8 +123,8 @@ export default function introduction() {
 					<StepOne>
 						<Image
 							src={IntroductionOne}
-							width="2181"
-							height="677"
+							width="2163"
+							height="1369"
 							alt="Icon"
 							objectFit="cover"
 						/>
