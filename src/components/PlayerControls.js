@@ -3,18 +3,22 @@ import {FaForward} from 'react-icons/fa';
 import {FaPlay} from 'react-icons/fa';
 import {FaPause} from 'react-icons/fa';
 
+import {BackwardButton} from '../styled-components/Button.styled';
+import {PlayButton} from '../styled-components/Button.styled';
+import {ForwardButton} from '../styled-components/Button.styled';
+
 function PlayerControls(props) {
 	return (
 		<div>
-			<button onClick={() => props.SkipSong(false)}>
+			<BackwardButton onClick={() => props.SkipSong(false)}>
 				<FaBackward />
-			</button>
-			<button onClick={() => props.setIsPlaying(!props.isPlaying)}>
+			</BackwardButton>
+			<PlayButton onClick={() => props.setIsPlaying(!props.isPlaying)}>
 				{props.isPlaying ? <FaPause /> : <FaPlay />}
-			</button>
-			<button onClick={() => props.SkipSong()}>
+			</PlayButton>
+			<ForwardButton onClick={() => props.SkipSong()}>
 				<FaForward />
-			</button>
+			</ForwardButton>
 		</div>
 	);
 }

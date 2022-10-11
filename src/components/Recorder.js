@@ -6,6 +6,9 @@ import EdiText from 'react-editext';
 import {FaMicrophone} from 'react-icons/fa';
 import {FaMicrophoneAltSlash} from 'react-icons/fa';
 
+import {Button} from '../styled-components/Button.styled';
+import {RecordingButton} from '../styled-components/Button.styled';
+
 export default function Recorder() {
 	const router = useRouter();
 
@@ -67,11 +70,9 @@ export default function Recorder() {
 
 	return (
 		<div>
-			<div>
-				<button onClick={isRecording ? stopRecording : startRecording}>
-					{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
-				</button>
-			</div>
+			<RecordingButton onClick={isRecording ? stopRecording : startRecording}>
+				{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
+			</RecordingButton>
 
 			<h4>MY RECORDED TRACKS:</h4>
 			{addRecordings.map(addRecording => (
@@ -86,7 +87,7 @@ export default function Recorder() {
 						submitOnEnter={true}
 					/>
 					<audio src={addRecording.url} controls="controls"></audio>
-					<button onClick={() => deleteAudio(addRecording.id)}>Delete</button>
+					<Button onClick={() => deleteAudio(addRecording.id)}>Delete</Button>
 				</div>
 			))}
 			<div>

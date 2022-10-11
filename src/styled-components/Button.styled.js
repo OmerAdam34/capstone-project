@@ -23,12 +23,6 @@ export const Button = styled.button`
 		left: 5px;
 		box-shadow: 0 0 0 0;
 	}
-
-	@media (min-width: 768px) {
-		.button-54 {
-			padding: 0.25em 0.75em;
-		}
-	}
 `;
 export const IntroductionButton = styled(Button)`
 	position: relative;
@@ -50,4 +44,50 @@ export const SignOutButton = styled(Button)`
 		left: 5px;
 		box-shadow: 0 0 0 0;
 	}
+`;
+
+export const RecordingButton = styled(Button)`
+	position: absolute;
+	z-index: 1;
+	top: 270.24px;
+	left: 90px;
+	width: 55px;
+	height: 51px;
+	:active {
+		top: 280px;
+		left: 90px;
+		box-shadow: 0 0 0 0;
+	}
+`;
+
+export const BackwardButton = styled(Button)`
+	position: absolute;
+	z-index: 1;
+	top: 270.24px;
+	left: 150px;
+	width: 55px;
+	height: 51px;
+	:active {
+		top: 180px;
+		left: 80px;
+		box-shadow: 0 0 0 0;
+	}
+`;
+
+export const PlayButton = styled(Button)`
+	position: absolute;
+	z-index: 1;
+	top: 270.24px;
+	left: 210px;
+	width: 55px;
+	height: 51px;
+`;
+
+export const ForwardButton = styled(Button)`
+	position: absolute;
+	z-index: 1;
+	top: 270.24px;
+	right: 50px;
+	width: 55px;
+	height: 51px;
 `;
