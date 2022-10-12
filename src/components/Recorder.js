@@ -6,8 +6,13 @@ import EdiText from 'react-editext';
 import {FaMicrophone} from 'react-icons/fa';
 import {FaMicrophoneAltSlash} from 'react-icons/fa';
 
-import {Button} from '../styled-components/Button.styled';
+import {Audio} from '../styled-components/Audio.styled';
 import {RecordingButton} from '../styled-components/Button.styled';
+import {IntroButton} from '../styled-components/Button.styled';
+import {DeleteButton} from '../styled-components/DeleteButton.styled';
+import {TapeCollectionHeadline} from '../styled-components/TapeCollectionHeadline.styled';
+
+import {AudioContainer} from './AudioContainer.styled';
 
 export default function Recorder() {
 	const recorder = useRef(null);
@@ -17,7 +22,7 @@ export default function Recorder() {
 	const handleAddRecording = (blobUrl, audiofile) => {
 		setAddRecordings([
 			...addRecordings,
-			{id: nanoid(), url: blobUrl, src: audiofile, description: 'Add your des.'},
+			{id: nanoid(), url: blobUrl, src: audiofile, description: 'Add your description'},
 		]);
 	};
 
@@ -68,7 +73,8 @@ export default function Recorder() {
 				{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
 			</RecordingButton>
 
-			<h4>MY RECORDED TRACKS:</h4>
+			<TapeCollectionHeadline>MY RECORDINGS:</TapeCollectionHeadline>
+
 			{addRecordings.map(addRecording => (
 				<div key={addRecording.id} className="audio-container">
 					<EdiText
@@ -79,14 +85,18 @@ export default function Recorder() {
 						editButtonContent={'Title'}
 						editOnViewClick={false}
 						submitOnEnter={true}
+						style={{width: '12%', height: '70%'}}
 					/>
-					<audio src={addRecording.url} controls="controls"></audio>
-					<Button onClick={() => deleteAudio(addRecording.id)}>Delete</Button>
+					<AudioContainer>
+						<Audio src={addRecording.url} controls="controls"></Audio>
+					</AudioContainer>
+					<DeleteButton onClick={() => deleteAudio(addRecording.id)}>DELETE</DeleteButton>
 				</div>
 			))}
+
 			<div>
 				<Link href="/introduction">
-					<button>SEE INTRODUCTION</button>
+					<IntroButton>SEE INTRODUCTION</IntroButton>
 				</Link>
 			</div>
 		</div>
