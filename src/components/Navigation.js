@@ -12,15 +12,23 @@ export default function Navigation() {
 
 			{show ? (
 				<div>
-					<Link href="/">
-						<p>Studio</p>
-					</Link>
-					<Link href="/introduction">
-						<p>Introduction</p>
-					</Link>
-					<Link href="/login">
-						<p>Account</p>
-					</Link>
+					<ul>
+						<li>
+							<Link href="/">
+								<a>Studio</a>
+							</Link>
+						</li>
+						<li>
+							<Link href="/introduction">
+								<a>Introduction</a>
+							</Link>
+						</li>
+						<li>
+							<Link href="/login">
+								<a>Account</a>
+							</Link>
+						</li>
+					</ul>
 				</div>
 			) : null}
 		</NavigationMenu>
