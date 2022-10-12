@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import Cassette from '../../public/images/cassette.png';
 import Logo2 from '../../public/images/logo-white.png';
 import SignInLogo from '../../public/images/signInLogo.png';
+import Navigation from '../components/Navigation';
 import {AccountDetails} from '../styled-components/AccountDetails.styled';
 import {MailDetail} from '../styled-components/AccountDetails.styled';
 import {Button} from '../styled-components/Button.styled';
@@ -119,6 +120,7 @@ export default function Login() {
 					<CollectionHead2>LLEC</CollectionHead2>
 					<CollectionHead3>TION</CollectionHead3>
 				</div>
+				<Navigation />
 			</div>
 		);
 	}
