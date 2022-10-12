@@ -1,16 +1,28 @@
+import Link from 'next/link';
 import {useState} from 'react';
 
+import {NavigationMenu} from '../styled-components/NavigationMenu.styled';
+
 export default function Navigation() {
-	const [show, setShow] = useState(true);
+	const [show, setShow] = useState(false);
 
 	return (
-		<div>
+		<NavigationMenu>
+			<button onClick={() => setShow(!show)}>menu</button>
+
 			{show ? (
 				<div>
-					<h1>Account</h1> <h1>Introduction</h1> <h1>Sign Out</h1>
+					<Link href="/">
+						<p>Studio</p>
+					</Link>
+					<Link href="/introduction">
+						<p>Introduction</p>
+					</Link>
+					<Link href="/login">
+						<p>Account</p>
+					</Link>
 				</div>
 			) : null}
-			<button onClick={() => setShow(!show)}>menu</button>
-		</div>
+		</NavigationMenu>
 	);
 }

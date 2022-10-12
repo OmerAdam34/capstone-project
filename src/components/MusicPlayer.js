@@ -7,6 +7,7 @@ import SignInLogo from '../../public/images/signInLogo.png';
 import {SignInContainer} from '../styled-components/SignInContainer.styled';
 import {MusicPlayerHeadline} from '../styled-components/SignInHeadline.styed';
 
+import Navigation from './Navigation';
 import Player from './Player';
 
 const SignInIcon = styled.div`
@@ -111,6 +112,7 @@ function MusicPlayer() {
 				nextSongIndex={nextSongIndex}
 				songs={songs}
 			/>
+			<Navigation />
 		</div>
 	);
 }
