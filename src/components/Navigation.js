@@ -1,17 +1,24 @@
 import Link from 'next/link';
 import {useState} from 'react';
+import {useSpring, animated as a} from 'react-spring';
 
+import {NavigationButton} from '../styled-components/NavigationButton.styled';
 import {NavigationMenu} from '../styled-components/NavigationMenu.styled';
 
 export default function Navigation() {
 	const [show, setShow] = useState(false);
 
+	const contentProps = useSpring({
+		opacity: show ? 1 : 0,
+		marginTop: show ? 0 : -500,
+	});
+
 	return (
 		<NavigationMenu>
-			<button onClick={() => setShow(!show)}>menu</button>
+			<NavigationButton onClick={() => setShow(!show)}>M</NavigationButton>
 
 			{show ? (
-				<div>
+				<a.div style={contentProps}>
 					<ul>
 						<li>
 							<Link href="/">
@@ -29,7 +36,7 @@ export default function Navigation() {
 							</Link>
 						</li>
 					</ul>
-				</div>
+				</a.div>
 			) : null}
 		</NavigationMenu>
 	);
