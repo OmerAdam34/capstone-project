@@ -6,11 +6,13 @@ import EdiText from 'react-editext';
 import {FaMicrophone} from 'react-icons/fa';
 import {FaMicrophoneAltSlash} from 'react-icons/fa';
 
+import {Audio} from '../styled-components/Audio.styled';
 import {RecordingButton} from '../styled-components/Button.styled';
 import {IntroButton} from '../styled-components/Button.styled';
-import {DeleteButton} from '../styled-components/Button.styled';
-import {CollectionHead} from '../styled-components/CollectionHead.styled';
-import {Output} from '../styled-components/Recordings.styled';
+import {DeleteButton} from '../styled-components/DeleteButton.styled';
+import {TapeCollectionHeadline} from '../styled-components/TapeCollectionHeadline.styled';
+
+import {AudioContainer} from './AudioContainer.styled';
 
 export default function Recorder() {
 	const recorder = useRef(null);
@@ -20,7 +22,7 @@ export default function Recorder() {
 	const handleAddRecording = (blobUrl, audiofile) => {
 		setAddRecordings([
 			...addRecordings,
-			{id: nanoid(), url: blobUrl, src: audiofile, description: 'Add your des.'},
+			{id: nanoid(), url: blobUrl, src: audiofile, description: 'Add your description'},
 		]);
 	};
 
@@ -71,10 +73,10 @@ export default function Recorder() {
 				{isRecording ? <FaMicrophoneAltSlash /> : <FaMicrophone />}
 			</RecordingButton>
 
-			<CollectionHead>MY TAPES:</CollectionHead>
+			<TapeCollectionHeadline>MY RECORDINGS:</TapeCollectionHeadline>
 
 			{addRecordings.map(addRecording => (
-				<Output key={addRecording.id} className="audio-container">
+				<div key={addRecording.id} className="audio-container">
 					<EdiText
 						value={addRecording.description}
 						type="text"
@@ -83,11 +85,13 @@ export default function Recorder() {
 						editButtonContent={'Title'}
 						editOnViewClick={false}
 						submitOnEnter={true}
+						style={{width: '12%', height: '70%'}}
 					/>
-					<audio src={addRecording.url} controls="controls"></audio>
-
+					<AudioContainer>
+						<Audio src={addRecording.url} controls="controls"></Audio>
+					</AudioContainer>
 					<DeleteButton onClick={() => deleteAudio(addRecording.id)}>DELETE</DeleteButton>
-				</Output>
+				</div>
 			))}
 
 			<div>
