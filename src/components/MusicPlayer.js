@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import SignInLogo from '../../public/images/signInLogo.png';
 import {SignInContainer} from '../styled-components/SignInContainer.styled';
-import {SignInHeadline} from '../styled-components/SignInHeadline.styed';
+import {MusicPlayerHeadline} from '../styled-components/SignInHeadline.styed';
 
 import Player from './Player';
 
@@ -103,7 +103,7 @@ function MusicPlayer() {
 						objectFit="cover"
 					/>
 				</SignInIcon>
-				<SignInHeadline>MANUFACTURE</SignInHeadline>
+				<MusicPlayerHeadline>MANUFACTURE</MusicPlayerHeadline>
 			</SignInContainer>
 			<Player
 				currentSongIndex={currentSongIndex}
