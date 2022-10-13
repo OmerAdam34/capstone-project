@@ -87,8 +87,8 @@ export default function Login() {
 							width: '27px',
 							height: '27px',
 							position: 'absolute',
-							right: '172px',
-							top: '146px',
+							right: '160px',
+							top: '155px',
 						}}
 					/>
 					<AccountDetails>
@@ -102,8 +102,8 @@ export default function Login() {
 							width: '27px',
 							height: '27px',
 							position: 'absolute',
-							right: '172px',
-							top: '200px',
+							right: '160px',
+							top: '191px',
 						}}
 					/>
 					<MailDetail>

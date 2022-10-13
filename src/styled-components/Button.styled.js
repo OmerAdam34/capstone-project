@@ -49,11 +49,11 @@ export const IntroButton = styled(Button)`
 
 export const SignOutButton = styled(Button)`
 	position: relative;
-	top: 10px;
-	left: 20px;
+	top: 1px;
+	left: 68px;
 	:active {
-		top: 16px;
-		left: 25px;
+		top: 6px;
+		left: 72px;
 		box-shadow: 0 0 0 0;
 	}
 `;
