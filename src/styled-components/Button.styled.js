@@ -26,12 +26,12 @@ export const Button = styled.button`
 `;
 
 export const IntroductionButton = styled(Button)`
-	position: relative;
-	top: 97.5%;
+	position: absolute;
+	top: 92%;
 	left: 9rem;
 	:active {
-		top: 5px;
-		left: 5px;
+		top: 93.5%;
+		left: 9.8rem;
 		box-shadow: 0 0 0 0;
 	}
 `;

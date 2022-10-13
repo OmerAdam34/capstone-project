@@ -81,7 +81,7 @@ const StepFive = styled.div`
 	object-fit: cover;
 `;
 
-export default function introduction() {
+export default function Introduction() {
 	return (
 		<div>
 			<Parallax pages={5} style={{top: '0', left: '0'}}>
@@ -242,10 +242,10 @@ export default function introduction() {
 						/>
 					</StepFive>
 				</ParallaxLayer>
-				<IntroductionButton>
-					<Link href="/">START </Link>
-				</IntroductionButton>
 			</Parallax>
+			<IntroductionButton>
+				<Link href="/">START</Link>
+			</IntroductionButton>
 		</div>
 	);
 }

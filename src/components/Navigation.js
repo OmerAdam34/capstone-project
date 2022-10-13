@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import {useState} from 'react';
+import {RiMenu5Fill} from 'react-icons/ri';
 import {useSpring, animated as a} from 'react-spring';
 
+import {LinkOne} from '../styled-components/Links.styled';
+import {LinkTwo} from '../styled-components/Links.styled';
+import {LinkThree} from '../styled-components/Links.styled';
 import {NavigationButton} from '../styled-components/NavigationButton.styled';
 import {NavigationMenu} from '../styled-components/NavigationMenu.styled';
 
@@ -10,31 +14,35 @@ export default function Navigation() {
 
 	const contentProps = useSpring({
 		opacity: show ? 1 : 0,
-		marginTop: show ? 0 : -500,
+		marginTop: show ? 100 : -500,
 	});
 
 	return (
 		<NavigationMenu>
-			<NavigationButton onClick={() => setShow(!show)}>M</NavigationButton>
+			<NavigationButton onClick={() => setShow(a => !a)}>
+				<RiMenu5Fill />
+			</NavigationButton>
 
 			{show ? (
 				<a.div style={contentProps}>
 					<ul>
-						<li>
+						<div>
 							<Link href="/">
-								<a>Studio</a>
+								<LinkOne>Studio</LinkOne>
 							</Link>
-						</li>
-						<li>
+						</div>
+
+						<div>
 							<Link href="/introduction">
-								<a>Introduction</a>
+								<LinkTwo>Introduction</LinkTwo>
 							</Link>
-						</li>
-						<li>
+						</div>
+						<br />
+						<div>
 							<Link href="/login">
-								<a>Account</a>
+								<LinkThree>Account</LinkThree>
 							</Link>
-						</li>
+						</div>
 					</ul>
 				</a.div>
 			) : null}
