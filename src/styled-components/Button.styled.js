@@ -38,7 +38,6 @@ export const SignOutButton = styled(Button)`
 
 export const RecordingButton = styled(Button)`
 	position: absolute;
-	z-index: 1;
 	top: 43.9%;
 	left: 21%;
 	width: 15%;

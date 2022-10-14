@@ -13,8 +13,8 @@ import Navigation from '../components/Navigation';
 import useStore from '../hooks/useStore';
 import {AccountDetails} from '../styled-components/AccountDetails.styled';
 import {MailDetail} from '../styled-components/AccountDetails.styled';
-import {Audio} from '../styled-components/Audio.styled';
-import {AudioContainer} from '../styled-components/AudioContainer.styled';
+import {AudioProfile} from '../styled-components/Audio.styled';
+import {AudiContainerProfile} from '../styled-components/AudioContainer.styled';
 import {Button} from '../styled-components/Button.styled';
 import {SignOutButton} from '../styled-components/Button.styled';
 import {Circle} from '../styled-components/Circle.style';
@@ -128,13 +128,15 @@ export default function Login() {
 				{addRecordings.map(addRecording => {
 					return (
 						<>
-							<AudioContainer>
-								<Audio src={addRecording.url} controls="controls"></Audio>
-							</AudioContainer>
+							<AudiContainerProfile>
+								<AudioProfile
+									src={addRecording.url}
+									controls="controls"
+								></AudioProfile>
+							</AudiContainerProfile>
 						</>
 					);
 				})}
-
 				<Navigation />
 			</div>
 		);
