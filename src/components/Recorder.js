@@ -1,7 +1,6 @@
 import MicRecorder from 'mic-recorder-to-mp3';
 import {nanoid} from 'nanoid';
 import {useEffect, useState, useRef} from 'react';
-// import EdiText from 'react-editext';
 import {FaMicrophone} from 'react-icons/fa';
 import {FaMicrophoneAltSlash} from 'react-icons/fa';
 

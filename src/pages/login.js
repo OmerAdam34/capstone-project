@@ -66,7 +66,6 @@ export default function Login() {
 	const {data: session} = useSession();
 
 	const addRecordings = useStore(state => state.addRecordings);
-	console.log(addRecordings);
 	if (session) {
 		return (
 			<div>
