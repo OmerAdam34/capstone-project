@@ -10,8 +10,11 @@ import Cassette from '../../public/images/cassette.png';
 import Logo2 from '../../public/images/logo-white.png';
 import SignInLogo from '../../public/images/signInLogo.png';
 import Navigation from '../components/Navigation';
+import useStore from '../hooks/useStore';
 import {AccountDetails} from '../styled-components/AccountDetails.styled';
 import {MailDetail} from '../styled-components/AccountDetails.styled';
+import {Audio} from '../styled-components/Audio.styled';
+import {AudioContainer} from '../styled-components/AudioContainer.styled';
 import {Button} from '../styled-components/Button.styled';
 import {SignOutButton} from '../styled-components/Button.styled';
 import {Circle} from '../styled-components/Circle.style';
@@ -62,6 +65,8 @@ const CassetteImg = styled.div`
 export default function Login() {
 	const {data: session} = useSession();
 
+	const addRecordings = useStore(state => state.addRecordings);
+	console.log(addRecordings);
 	if (session) {
 		return (
 			<div>
@@ -120,6 +125,16 @@ export default function Login() {
 					<CollectionHead2>LLEC</CollectionHead2>
 					<CollectionHead3>TION</CollectionHead3>
 				</div>
+				{addRecordings.map(addRecording => {
+					return (
+						<>
+							<AudioContainer>
+								<Audio src={addRecording.url} controls="controls"></Audio>
+							</AudioContainer>
+						</>
+					);
+				})}
+
 				<Navigation />
 			</div>
 		);

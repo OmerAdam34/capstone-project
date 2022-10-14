@@ -5,6 +5,7 @@ import {useEffect, useState, useRef} from 'react';
 import {FaMicrophone} from 'react-icons/fa';
 import {FaMicrophoneAltSlash} from 'react-icons/fa';
 
+import useStore from '../hooks/useStore';
 import {Audio} from '../styled-components/Audio.styled';
 import {AudioContainer} from '../styled-components/AudioContainer.styled';
 import {RecordingButton} from '../styled-components/Button.styled';
@@ -28,7 +29,8 @@ export default function Recorder() {
 		setAddRecordings(addRecordings.filter(addRecording => addRecording.id !== id));
 	};
 
-	const [addRecordings, setAddRecordings] = useState([]);
+	const addRecordings = useStore(state => state.addRecordings);
+	const setAddRecordings = useStore(state => state.setAddRecordings);
 
 	const handleSave = (value, id) => {
 		setAddRecordings(
