@@ -52,7 +52,7 @@ const SignInIcon = styled.div`
 const CassetteImg = styled.div`
 	position: absolute;
 	bottom: 28%;
-	left: 3%;
+	left: 6%;
 	width: 125px;
 	height: auto;
 	padding: 10px 10px 10px 10px;

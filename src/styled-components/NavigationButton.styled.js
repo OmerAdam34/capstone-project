@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const NavigationButton = styled.button`
 	display: flex;
 	position: absolute;
-	top: 385px;
-	left: 339px;
+	top: 95%;
+	left: 50%;
 	align-items: center;
 	width: 45px;
 	height: 45px;

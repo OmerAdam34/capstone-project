@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const LinkOne = styled.a`
-	position: absolute;
-	z-index: 12;
-	bottom: 120%;
-	left: 25%;
-	width: 140%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 	height: 14%;
+	margin-bottom: 20px;
 	padding: 5px;
 	border: none;
 	background-color: #252525;
@@ -20,14 +20,4 @@ export const LinkOne = styled.a`
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
-`;
-
-export const LinkTwo = styled(LinkOne)`
-	bottom: 105%;
-	margin-top: 40px;
-`;
-
-export const LinkThree = styled(LinkOne)`
-	bottom: 90%;
-	margin-top: 60px;
 `;
