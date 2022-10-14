@@ -1,28 +1,40 @@
 import Link from 'next/link';
 import {useState} from 'react';
 import {RiMenu5Fill} from 'react-icons/ri';
-import {useSpring, animated as a} from 'react-spring';
+import {useSpring, animated} from 'react-spring';
 
 import {LinkOne} from '../styled-components/Links.styled';
 import {List} from '../styled-components/list.styled';
 import {NavigationButton} from '../styled-components/NavigationButton.styled';
 
 export default function Navigation() {
-	const [show, setShow] = useState(false);
+	const [active, setActive] = useState(false);
 
-	const contentProps = useSpring({
-		opacity: show ? 1 : 0,
-		marginTop: show ? 0 : -1500,
+	const springs = useSpring({
+		y: active ? 0 : -300,
 	});
 
 	return (
 		<div>
-			<NavigationButton onClick={() => setShow(a => !a)}>
+			<NavigationButton onClick={() => setActive(!active)}>
 				<RiMenu5Fill />
 			</NavigationButton>
 
-			{show ? (
-				<a.div style={contentProps}>
+			{active ? (
+				<animated.div
+					style={{
+						zIndex: 1,
+						position: 'fixed',
+						top: 0,
+						left: 0,
+						right: 0,
+						height: 250,
+						padding: 8,
+						background: '#1f2022',
+						borderRadius: 8,
+						...springs,
+					}}
+				>
 					<List>
 						<li>
 							<Link href="/">
@@ -41,7 +53,7 @@ export default function Navigation() {
 							</Link>
 						</li>
 					</List>
-				</a.div>
+				</animated.div>
 			) : null}
 		</div>
 	);

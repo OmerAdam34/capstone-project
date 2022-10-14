@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Details = styled.p`
 	position: absolute;
-	z-index: 2;
+	z-index: 1;
 	top: 131.2px;
 	left: 100px;
 	font-family: monospace;

@@ -25,28 +25,6 @@ export const Button = styled.button`
 	}
 `;
 
-export const IntroductionButton = styled(Button)`
-	position: absolute;
-	top: 92%;
-	left: 9rem;
-	:active {
-		top: 93.5%;
-		left: 9.8rem;
-		box-shadow: 0 0 0 0;
-	}
-`;
-
-export const IntroButton = styled(Button)`
-	position: relative;
-	top: 97.5%;
-	left: 22%;
-	:active {
-		top: 97.5%;
-		left: 22%;
-		box-shadow: 0 0 0 0;
-	}
-`;
-
 export const SignOutButton = styled(Button)`
 	position: relative;
 	top: 1px;
@@ -116,4 +94,14 @@ export const ForwardButton = styled(Button)`
 
 export const IncognitoButton = styled(Button)`
 	letter-spacing: 0;
+`;
+
+export const StartButton = styled(Button)`
+	top: 600px;
+	left: 40%;
+	:active {
+		top: 606px;
+		left: 42%;
+		box-shadow: 0 0 0 0;
+	}
 `;

@@ -1,5 +1,6 @@
 import {Parallax, ParallaxLayer} from '@react-spring/parallax';
 import Image from 'next/image';
+import Link from 'next/link';
 import {IoIosArrowDown} from 'react-icons/io';
 import styled from 'styled-components';
 
@@ -9,6 +10,7 @@ import LogoIcon from '../../public/images/logo-small.png';
 import IntroductionTwo from '../../public/images/lyrics.png';
 import IntroductionFour from '../../public/images/recording.png';
 import IntroductionFive from '../../public/images/send.png';
+import {StartButton} from '../styled-components/Button.styled';
 import {IntroductionContainer} from '../styled-components/IntroductionContainer.styled';
 import {IntroductionHeadline} from '../styled-components/IntroductionHeadline.styled';
 import {IntroductionNotes} from '../styled-components/IntroductionNotes.styled';
@@ -241,6 +243,9 @@ export default function Introduction() {
 					</StepFive>
 				</ParallaxLayer>
 			</Parallax>
+			<Link href="/">
+				<StartButton>START</StartButton>
+			</Link>
 		</div>
 	);
 }

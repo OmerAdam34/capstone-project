@@ -1,6 +1,5 @@
 import MicRecorder from 'mic-recorder-to-mp3';
 import {nanoid} from 'nanoid';
-import Link from 'next/link';
 import {useEffect, useState, useRef} from 'react';
 // import EdiText from 'react-editext';
 import {FaMicrophone} from 'react-icons/fa';
@@ -9,7 +8,6 @@ import {FaMicrophoneAltSlash} from 'react-icons/fa';
 import {Audio} from '../styled-components/Audio.styled';
 import {AudioContainer} from '../styled-components/AudioContainer.styled';
 import {RecordingButton} from '../styled-components/Button.styled';
-import {IntroButton} from '../styled-components/Button.styled';
 import {DeleteButton} from '../styled-components/DeleteButton.styled';
 import {StyledEdiText} from '../styled-components/StyledEdiText.styled';
 import {TapeCollectionHeadline} from '../styled-components/TapeCollectionHeadline.styled';
@@ -92,12 +90,6 @@ export default function Recorder() {
 					<DeleteButton onClick={() => deleteAudio(addRecording.id)}>DELETE</DeleteButton>
 				</div>
 			))}
-
-			<div>
-				<Link href="/introduction">
-					<IntroButton>SEE INTRODUCTION</IntroButton>
-				</Link>
-			</div>
 		</div>
 	);
 }
