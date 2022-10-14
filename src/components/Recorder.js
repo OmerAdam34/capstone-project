@@ -1,18 +1,16 @@
 import MicRecorder from 'mic-recorder-to-mp3';
 import {nanoid} from 'nanoid';
-import Link from 'next/link';
 import {useEffect, useState, useRef} from 'react';
-import EdiText from 'react-editext';
 import {FaMicrophone} from 'react-icons/fa';
 import {FaMicrophoneAltSlash} from 'react-icons/fa';
 
+import useStore from '../hooks/useStore';
 import {Audio} from '../styled-components/Audio.styled';
+import {AudioContainer} from '../styled-components/AudioContainer.styled';
 import {RecordingButton} from '../styled-components/Button.styled';
-import {IntroButton} from '../styled-components/Button.styled';
 import {DeleteButton} from '../styled-components/DeleteButton.styled';
+import {StyledEdiText} from '../styled-components/StyledEdiText.styled';
 import {TapeCollectionHeadline} from '../styled-components/TapeCollectionHeadline.styled';
-
-import {AudioContainer} from './AudioContainer.styled';
 
 export default function Recorder() {
 	const recorder = useRef(null);
@@ -22,7 +20,7 @@ export default function Recorder() {
 	const handleAddRecording = (blobUrl, audiofile) => {
 		setAddRecordings([
 			...addRecordings,
-			{id: nanoid(), url: blobUrl, src: audiofile, description: 'Add your description'},
+			{id: nanoid(), url: blobUrl, src: audiofile, description: 'add your description'},
 		]);
 	};
 
@@ -30,7 +28,8 @@ export default function Recorder() {
 		setAddRecordings(addRecordings.filter(addRecording => addRecording.id !== id));
 	};
 
-	const [addRecordings, setAddRecordings] = useState([]);
+	const addRecordings = useStore(state => state.addRecordings);
+	const setAddRecordings = useStore(state => state.setAddRecordings);
 
 	const handleSave = (value, id) => {
 		setAddRecordings(
@@ -77,12 +76,11 @@ export default function Recorder() {
 
 			{addRecordings.map(addRecording => (
 				<div key={addRecording.id} className="audio-container">
-					<EdiText
+					<StyledEdiText
 						value={addRecording.description}
 						type="text"
 						onSave={value => handleSave(value, addRecording.id)}
 						id={addRecording.id}
-						editButtonContent={'Title'}
 						editOnViewClick={false}
 						submitOnEnter={true}
 						style={{width: '12%', height: '70%'}}
@@ -93,12 +91,6 @@ export default function Recorder() {
 					<DeleteButton onClick={() => deleteAudio(addRecording.id)}>DELETE</DeleteButton>
 				</div>
 			))}
-
-			<div>
-				<Link href="/introduction">
-					<IntroButton>SEE INTRODUCTION</IntroButton>
-				</Link>
-			</div>
 		</div>
 	);
 }

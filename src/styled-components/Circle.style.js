@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Circle = styled.div`
 	position: absolute;
 	bottom: 30%;
-	left: 5.7%;
+	left: 8.7%;
 	width: 125px;
 	height: 81px;
 	background-color: lightgray;

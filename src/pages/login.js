@@ -10,8 +10,11 @@ import Cassette from '../../public/images/cassette.png';
 import Logo2 from '../../public/images/logo-white.png';
 import SignInLogo from '../../public/images/signInLogo.png';
 import Navigation from '../components/Navigation';
+import useStore from '../hooks/useStore';
 import {AccountDetails} from '../styled-components/AccountDetails.styled';
 import {MailDetail} from '../styled-components/AccountDetails.styled';
+import {AudioProfile} from '../styled-components/Audio.styled';
+import {AudiContainerProfile} from '../styled-components/AudioContainer.styled';
 import {Button} from '../styled-components/Button.styled';
 import {SignOutButton} from '../styled-components/Button.styled';
 import {Circle} from '../styled-components/Circle.style';
@@ -52,7 +55,7 @@ const SignInIcon = styled.div`
 const CassetteImg = styled.div`
 	position: absolute;
 	bottom: 28%;
-	left: 3%;
+	left: 6%;
 	width: 125px;
 	height: auto;
 	padding: 10px 10px 10px 10px;
@@ -62,6 +65,7 @@ const CassetteImg = styled.div`
 export default function Login() {
 	const {data: session} = useSession();
 
+	const addRecordings = useStore(state => state.addRecordings);
 	if (session) {
 		return (
 			<div>
@@ -87,8 +91,8 @@ export default function Login() {
 							width: '27px',
 							height: '27px',
 							position: 'absolute',
-							right: '172px',
-							top: '146px',
+							right: '160px',
+							top: '155px',
 						}}
 					/>
 					<AccountDetails>
@@ -102,8 +106,8 @@ export default function Login() {
 							width: '27px',
 							height: '27px',
 							position: 'absolute',
-							right: '172px',
-							top: '200px',
+							right: '160px',
+							top: '191px',
 						}}
 					/>
 					<MailDetail>
@@ -120,6 +124,18 @@ export default function Login() {
 					<CollectionHead2>LLEC</CollectionHead2>
 					<CollectionHead3>TION</CollectionHead3>
 				</div>
+				{addRecordings.map(addRecording => {
+					return (
+						<>
+							<AudiContainerProfile>
+								<AudioProfile
+									src={addRecording.url}
+									controls="controls"
+								></AudioProfile>
+							</AudiContainerProfile>
+						</>
+					);
+				})}
 				<Navigation />
 			</div>
 		);

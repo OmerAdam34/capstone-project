@@ -3,9 +3,9 @@ import {Producer} from '../styled-components/Details.styled';
 
 export default function PlayerDetails(props) {
 	return (
-		<div>
+		<>
 			<Details>title: {props.song.title}</Details>
-			<Producer>Producer: {props.song.producer}</Producer>
-		</div>
+			<Producer>producer: {props.song.producer}</Producer>
+		</>
 	);
 }

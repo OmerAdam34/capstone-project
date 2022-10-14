@@ -25,42 +25,19 @@ export const Button = styled.button`
 	}
 `;
 
-export const IntroductionButton = styled(Button)`
-	position: relative;
-	top: 97.5%;
-	left: 9rem;
-	:active {
-		top: 5px;
-		left: 5px;
-		box-shadow: 0 0 0 0;
-	}
-`;
-
-export const IntroButton = styled(Button)`
-	position: relative;
-	top: 97.5%;
-	left: 22%;
-	:active {
-		top: 97.5%;
-		left: 22%;
-		box-shadow: 0 0 0 0;
-	}
-`;
-
 export const SignOutButton = styled(Button)`
 	position: relative;
-	top: 10px;
-	left: 20px;
+	top: 1px;
+	left: 68px;
 	:active {
-		top: 16px;
-		left: 25px;
+		top: 6px;
+		left: 72px;
 		box-shadow: 0 0 0 0;
 	}
 `;
 
 export const RecordingButton = styled(Button)`
 	position: absolute;
-	z-index: 1;
 	top: 43.9%;
 	left: 21%;
 	width: 15%;
@@ -116,4 +93,14 @@ export const ForwardButton = styled(Button)`
 
 export const IncognitoButton = styled(Button)`
 	letter-spacing: 0;
+`;
+
+export const StartButton = styled(Button)`
+	top: 600px;
+	left: 40%;
+	:active {
+		top: 606px;
+		left: 42%;
+		box-shadow: 0 0 0 0;
+	}
 `;

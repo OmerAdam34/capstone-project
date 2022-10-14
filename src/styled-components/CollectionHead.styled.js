@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const CollectionHead = styled.h4`
 	position: absolute;
 	bottom: 31%;
-	left: 47.5%;
+	left: 60%;
 	font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
 		'Helvetica Neue', sans-serif;
 	font-size: 2rem;
-	font-weight: 800;
+	font-weight: 850;
 	letter-spacing: 0.35rem;
 	text-align: center;
 `;

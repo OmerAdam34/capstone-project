@@ -6,3 +6,7 @@ export const Audio = styled.audio`
 	align-items: center;
 	justify-content: center;
 `;
+
+export const AudioProfile = styled(Audio)`
+	width: 98%;
+`;

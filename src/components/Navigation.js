@@ -1,36 +1,60 @@
 import Link from 'next/link';
 import {useState} from 'react';
+import {RiMenu5Fill} from 'react-icons/ri';
+import {useSpring, animated} from 'react-spring';
 
-import {NavigationMenu} from '../styled-components/NavigationMenu.styled';
+import {LinkOne} from '../styled-components/Links.styled';
+import {List} from '../styled-components/List.styled';
+import {NavigationButton} from '../styled-components/NavigationButton.styled';
 
 export default function Navigation() {
-	const [show, setShow] = useState(false);
+	const [active, setActive] = useState(false);
+
+	const springs = useSpring({
+		y: active ? 0 : -300,
+	});
 
 	return (
-		<NavigationMenu>
-			<button onClick={() => setShow(!show)}>menu</button>
+		<div>
+			<NavigationButton onClick={() => setActive(!active)}>
+				<RiMenu5Fill />
+			</NavigationButton>
 
-			{show ? (
-				<div>
-					<ul>
+			{active ? (
+				<animated.div
+					style={{
+						zIndex: 1,
+						position: 'fixed',
+						top: 0,
+						left: 0,
+						right: 0,
+						height: 250,
+						padding: 8,
+						background: '#1f2022',
+						borderRadius: 8,
+						...springs,
+					}}
+				>
+					<List>
 						<li>
 							<Link href="/">
-								<a>Studio</a>
+								<LinkOne>Studio</LinkOne>
 							</Link>
 						</li>
+
 						<li>
 							<Link href="/introduction">
-								<a>Introduction</a>
+								<LinkOne>Introduction</LinkOne>
 							</Link>
 						</li>
 						<li>
 							<Link href="/login">
-								<a>Account</a>
+								<LinkOne>Account</LinkOne>
 							</Link>
 						</li>
-					</ul>
-				</div>
+					</List>
+				</animated.div>
 			) : null}
-		</NavigationMenu>
+		</div>
 	);
 }
