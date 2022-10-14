@@ -4,7 +4,7 @@ import {RiMenu5Fill} from 'react-icons/ri';
 import {useSpring, animated} from 'react-spring';
 
 import {LinkOne} from '../styled-components/Links.styled';
-import {List} from '../styled-components/list.styled';
+import {List} from '../styled-components/List.styled';
 import {NavigationButton} from '../styled-components/NavigationButton.styled';
 
 export default function Navigation() {
