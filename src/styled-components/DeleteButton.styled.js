@@ -24,4 +24,7 @@ export const DeleteButton = styled.button`
 		border: 3px solid;
 		box-shadow: 0 0 0 0;
 	}
+	@media (min-width: 376px) {
+		left: 80.9%;
+	}
 `;
