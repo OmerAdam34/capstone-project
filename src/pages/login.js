@@ -40,6 +40,13 @@ const LogoWhite = styled.div`
 	height: auto;
 	background-color: black;
 	box-shadow: rgba(0, 0, 0, 0.56) 0 22px 70px 4px;
+	@media (min-width: 376px) {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: 54%;
+		background-color: black;
+	}
 `;
 
 const SignInIcon = styled.div`

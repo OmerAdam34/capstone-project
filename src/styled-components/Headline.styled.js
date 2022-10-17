@@ -5,6 +5,12 @@ export const Headline = styled.p`
 		'Helvetica Neue', sans-serif;
 	font-size: 2.15rem;
 	font-weight: 750;
+	@media (min-width: 376px) {
+		position: relative;
+		top: 70px;
+		font-size: 2.9rem;
+		font-weight: 750;
+	}
 `;
 
 export const IncognitoHeadline = styled(Headline)`
