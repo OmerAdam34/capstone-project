@@ -7,4 +7,7 @@ export const SignInContainer = styled.div`
 	width: 400px;
 	height: 87px;
 	background-color: black;
+	@media (min-width: 376px) {
+		width: 100%;
+	}
 `;
