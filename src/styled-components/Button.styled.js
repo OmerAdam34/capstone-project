@@ -143,4 +143,13 @@ export const StartButton = styled(Button)`
 		left: 41%;
 		box-shadow: 0 0 0 0;
 	}
+	@media (min-width: 376px) {
+		top: 820px;
+		left: 40%;
+		:active {
+			top: 826px;
+			left: 41%;
+			box-shadow: 0 0 0 0;
+		}
+	}
 `;
