@@ -67,6 +67,11 @@ const CassetteImg = styled.div`
 	height: auto;
 	padding: 10px 10px 10px 10px;
 	object-fit: cover;
+	@media (min-width: 376px) {
+		bottom: 28.9%;
+		width: 145px;
+		height: 101px;
+	}
 `;
 
 export default function Login() {

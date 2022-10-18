@@ -15,4 +15,8 @@ export const TapeCollectionHeadline = styled.p`
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
+	@media (min-width: 376px) {
+		margin-right: 2%;
+		margin-left: 2%;
+	}
 `;

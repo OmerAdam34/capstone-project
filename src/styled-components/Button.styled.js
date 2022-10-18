@@ -47,6 +47,16 @@ export const RecordingButton = styled(Button)`
 		left: 22%;
 		box-shadow: 0 0 0 0;
 	}
+	@media (min-width: 376px) {
+		top: 34.5%;
+		left: 17.5%;
+		height: 6.6%;
+		:active {
+			top: 34.5%;
+			left: 18.5%;
+			box-shadow: 0 0 0 0;
+		}
+	}
 `;
 
 export const BackwardButton = styled(Button)`
@@ -60,6 +70,16 @@ export const BackwardButton = styled(Button)`
 		top: 43.9%;
 		left: 38.3%;
 		box-shadow: 0 0 0 0;
+	}
+	@media (min-width: 376px) {
+		top: 34.5%;
+		left: 33.5%;
+		height: 6.6%;
+		:active {
+			top: 34.5%;
+			left: 34.5%;
+			box-shadow: 0 0 0 0;
+		}
 	}
 `;
 
@@ -75,6 +95,16 @@ export const PlayButton = styled(Button)`
 		left: 54.6%;
 		box-shadow: 0 0 0 0;
 	}
+	@media (min-width: 376px) {
+		top: 34.5%;
+		left: 49.5%;
+		height: 6.6%;
+		:active {
+			top: 34.5%;
+			left: 50.5%;
+			box-shadow: 0 0 0 0;
+		}
+	}
 `;
 
 export const ForwardButton = styled(Button)`
@@ -89,6 +119,16 @@ export const ForwardButton = styled(Button)`
 		left: 71%;
 		box-shadow: 0 0 0 0;
 	}
+	@media (min-width: 376px) {
+		top: 34.5%;
+		left: 65.6%;
+		height: 6.6%;
+		:active {
+			top: 34.5%;
+			left: 66.6%;
+			box-shadow: 0 0 0 0;
+		}
+	}
 `;
 
 export const IncognitoButton = styled(Button)`
@@ -100,7 +140,16 @@ export const StartButton = styled(Button)`
 	left: 40%;
 	:active {
 		top: 606px;
-		left: 42%;
+		left: 41%;
 		box-shadow: 0 0 0 0;
+	}
+	@media (min-width: 376px) {
+		top: 820px;
+		left: 40%;
+		:active {
+			top: 826px;
+			left: 41%;
+			box-shadow: 0 0 0 0;
+		}
 	}
 `;
