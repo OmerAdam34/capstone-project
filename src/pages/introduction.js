@@ -45,6 +45,9 @@ const StepTwo = styled.div`
 	height: auto;
 	padding: 10px 10px 10px 10px;
 	object-fit: cover;
+	@media (min-width: 376px) {
+		bottom: 600px;
+	}
 `;
 
 const StepThree = styled.div`
@@ -57,6 +60,9 @@ const StepThree = styled.div`
 	padding: 10px 10px 10px 10px;
 	object-fit: cover;
 	transform: rotate(-10deg);
+	@media (min-width: 376px) {
+		top: 700px;
+	}
 `;
 
 const StepFour = styled.div`
@@ -68,6 +74,9 @@ const StepFour = styled.div`
 	height: auto;
 	padding: 10px 10px 10px 10px;
 	object-fit: cover;
+	@media (min-width: 376px) {
+		bottom: 1000px;
+	}
 `;
 
 const StepFive = styled.div`
@@ -79,6 +88,9 @@ const StepFive = styled.div`
 	height: auto;
 	padding: 10px 10px 10px 10px;
 	object-fit: cover;
+	@media (min-width: 376px) {
+		top: 600px;
+	}
 `;
 
 export default function Introduction() {
