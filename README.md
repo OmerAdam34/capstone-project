@@ -13,3 +13,4 @@ Technologies: react, zustand, NextAuth.js, Serverless Functions, Next.js, styled
 If you have any questions, ideas or other concerns, please do not hesitate to contact me. 
 
 
+<img width="311" alt="Bildschirmfoto 2022-10-17 um 16 40 17" src="https://user-images.githubusercontent.com/107583280/197251007-578ebd1c-dcb2-4d7a-b47d-516cc4e0f150.png">
