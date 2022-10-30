@@ -68,9 +68,12 @@ const CassetteImg = styled.div`
 	padding: 10px 10px 10px 10px;
 	object-fit: cover;
 	@media (min-width: 376px) {
-		bottom: 36%;
+
+
+		bottom: 28.9%;
 		width: 145px;
-		height: 95px;
+		height: 101px;
+
 	}
 `;
 

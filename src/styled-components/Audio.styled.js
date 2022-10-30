@@ -7,7 +7,10 @@ export const Audio = styled.audio`
 	justify-content: center;
 	@media (min-width: 376px) {
 		position: relative;
-		top: 115px;
+
+		left: 2.5%;
+		width: 78%;
+
 	}
 `;
 
