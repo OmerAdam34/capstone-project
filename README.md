@@ -1,7 +1,5 @@
 # capstoneTape
 
-Lil Studio
-
 Lil Studio is an app to record your own rap/song lyrics. 
 
 Please check the app on iPhone SE format 365 x 667. 
